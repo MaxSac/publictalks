@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/webslides.css" type="text/css" media="all">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+        <title>EM Shower update</title>
+    </head>
+    <body>
+        <main>
+            <article id="webslides" class="horizontal">
+                <!-- Slide 1 -->
+                <section>
+                    <span class="background" style="background-image:url('images/tu_logo.png')"></span>
+                    <div class="wrap">
+                        <h1><strong>Particle Resolution Cut</strong></h1>
+                        <p class="text-intro">
+                        Setting a lower stochastic loss energy threshold.
+                        </p>
+                        <a class="button zoomIn" href="https://gitlab.ikp.kit.edu/AirShowerPhysics/corsika/-/merge_requests/345">
+                            Have a look at GitHub
+                        </a>
+                    </div>
+                </section>
+                <!-- Slide 2 -->
+                <section>
+                    <div class="wrap size-65 aligncenter">
+                        <h2><strong>Reduce calculations with no effect on my observables</strong></h2>
+                        <p class="text-intro">
+                        There exists losses which are so small that they won't be propagated further.
+                        The Aim is to reduce the number of invisible losses.
+                        </p>
+                        <div class="bg-white shadow">
+                            <ul class="flexblock reasons">
+                                <li>
+                                    <h3>What are invisible losses?</h3>
+                                    <p>
+                                    Losses with an energy below an energy certain $E_\mathrm{res}$ can not been seen by the observer,
+                                    because all secondaries energies $E^i$ are smaller than the corresponding particle cut $\theta(E^i, \mathrm{type}^i)$.
+                                    It is important that they are threaded as a continuous loss, but there is no need to tread them stochastically.
+                                    The energy $E_\mathrm{res}$ from which losses are treated stochastically is a hyperparameter in PROPOSAL and can be adjusted.
+
+                                    \begin{equation}
+                                    \theta(E, \mathrm{type}) =  \left\{
+                                    \begin{array}{l}
+                                    E / E_\mathrm{type} > 1, \text{keep} \\
+                                    E / E_\mathrm{type} \leq 1, \text{remove}
+                                    \end{array}
+                                    \right.
+                                    \end{equation}
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>How much time do I save?</h3>
+                                    <p>
+                                    It realy depends on the particle cut and the energy where losses $E_\mathrm{res}$ are treated stochastically.
+                                    If by a clever choice of $E_\mathrm{res}$ can
+                                    increase the probability that they survive the ParticleCut $\theta$,
+                                    the runtime is reduced.
+                                    A good proxi might be the rates $\mathrm{d}N/\mathrm{d}X$ of the particles.
+                                    </p>
+                                    <div class="grid vertical-align">
+                                        <div class="column">
+                                            <!-- <ul class="flexblock metrics"> -->
+                                            <!--     <li> -->
+                                            <!--         <span> 0.5 MeV</span> -->
+                                            <!--         particle cut -->
+                                            <!--     </li> -->
+                                            <!-- </ul> -->
+                                            <img src="images/cut_dependence_0.5MeV.PNG" alt=""/>
+                                        </div>
+                                        <div class="column">
+                                            <!-- <ul class="flexblock metrics"> -->
+                                            <!--     <li> -->
+                                            <!--         <span> 10 MeV</span> -->
+                                            <!--         particle cut -->
+                                            <!--     </li> -->
+                                            <!-- </ul> -->
+                                            <img src="images/cut_dependence_10.0MeV.PNG" alt=""/>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3>What is an good resolution cut?</h3>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+
+        <script src="js/webslides.js"></script>
+        <script>
+            window.ws= new WebSlides();
+        </script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+                src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <script charset="utf-8">
+            window.MathJax = {
+                tex: {
+                    tags: 'ams',
+                    inlineMath: [['$', '$']]
+                }
+            };
+        </script>
+    </body>
+</html>
