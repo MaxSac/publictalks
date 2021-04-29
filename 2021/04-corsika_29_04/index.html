@@ -39,7 +39,7 @@
                                     <p>
                                     Losses with an energy below an energy certain $E_\mathrm{res}$ can not been seen by the observer,
                                     because all secondaries energies $E^i$ are smaller than the corresponding particle cut $\theta(E^i, \mathrm{type}^i)$.
-                                    It is important that they are threaded as a continuous loss, but there is no need to tread them stochastically.
+                                    It is important that they are treated as a continuous loss, but there is no need to treat them stochastically.
                                     The energy $E_\mathrm{res}$ from which losses are treated stochastically is a hyperparameter in PROPOSAL and can be adjusted.
 
                                     \begin{equation}
@@ -63,27 +63,24 @@
                                     </p>
                                     <div class="grid vertical-align">
                                         <div class="column">
-                                            <!-- <ul class="flexblock metrics"> -->
-                                            <!--     <li> -->
-                                            <!--         <span> 0.5 MeV</span> -->
-                                            <!--         particle cut -->
-                                            <!--     </li> -->
-                                            <!-- </ul> -->
                                             <img src="images/cut_dependence_0.5MeV.PNG" alt=""/>
                                         </div>
                                         <div class="column">
-                                            <!-- <ul class="flexblock metrics"> -->
-                                            <!--     <li> -->
-                                            <!--         <span> 10 MeV</span> -->
-                                            <!--         particle cut -->
-                                            <!--     </li> -->
-                                            <!-- </ul> -->
-                                            <img src="images/cut_dependence_10.0MeV.PNG" alt=""/>
+                                            <img src="images/cut_dependence_20.0MeV.PNG" alt=""/>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
                                     <h3>What is an good resolution cut?</h3>
+                                    There is no generally valid resolution cut.
+                                    For example cherenkov telescopes are interested in the cherenkov light, not the charge asymetry.
+                                    Therefore losses that has no probability to produce secondaries which emits cherenkov light are useless.
+
+                                    \begin{equation}
+                                    E_\mathrm{min} = m c^2
+                                    \left(\frac{n}{\sqrt{n^2 -1}} -1 \right)
+                                    \approx 20 \, \mathrm{MeV}
+                                    \end{equation}
                                 </li>
                             </ul>
                         </div>
