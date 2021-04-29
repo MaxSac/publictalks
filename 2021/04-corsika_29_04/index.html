@@ -29,18 +29,17 @@
                     <div class="wrap size-65 aligncenter">
                         <h2><strong>Reduce calculations with no effect on my observables</strong></h2>
                         <p class="text-intro">
-                        There exists losses which are so small that they won't be propagated further.
-                        The Aim is to reduce the number of invisible losses.
+                        There are losses which are so small that they won't be propagated further.
+                        The aim is to reduce the number of invisible losses.
                         </p>
                         <div class="bg-white shadow">
                             <ul class="flexblock reasons">
                                 <li>
                                     <h3>What are invisible losses?</h3>
                                     <p>
-                                    Losses with an energy below an energy certain $E_\mathrm{res}$ can not been seen by the observer,
-                                    because all secondaries energies $E^i$ are smaller than the corresponding particle cut $\theta(E^i, \mathrm{type}^i)$.
+                                    Losses with an energy below a certain energy $E_\mathrm{res}$ can not been seen by the observer,
+                                    because all secondary energies $E^i$ are smaller than the corresponding particle cut $\theta(E^i, \mathrm{type}^i)$.
                                     It is important that they are treated as a continuous loss, but there is no need to treat them stochastically.
-                                    The energy $E_\mathrm{res}$ from which losses are treated stochastically is a hyperparameter in PROPOSAL and can be adjusted.
 
                                     \begin{equation}
                                     \theta(E, \mathrm{type}) =  \left\{
@@ -50,16 +49,17 @@
                                     \end{array}
                                     \right.
                                     \end{equation}
+
+                                    The energy $E_\mathrm{res}$ from which losses are treated stochastically is a hyperparameter in PROPOSAL and can be adjusted.
                                     </p>
                                 </li>
                                 <li>
                                     <h3>How much time do I save?</h3>
                                     <p>
-                                    It realy depends on the particle cut and the energy where losses $E_\mathrm{res}$ are treated stochastically.
-                                    If by a clever choice of $E_\mathrm{res}$ can
-                                    increase the probability that they survive the ParticleCut $\theta$,
+                                    It really depends on the particle cut and the energy where losses $E_\mathrm{res}$ are treated stochastically.
+                                    If by a clever choice of $E_\mathrm{res}$ the probability that they survive the ParticleCut $\theta$ can be increased,
                                     the runtime is reduced.
-                                    A good proxi might be the rates $\mathrm{d}N/\mathrm{d}X$ of the particles.
+                                    A good approximation might be the rates $\mathrm{d}N/\mathrm{d}X$ of the particles.
                                     </p>
                                     <div class="grid vertical-align">
                                         <div class="column">
@@ -71,10 +71,12 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <h3>What is an good resolution cut?</h3>
+                                    <h3>What is a good resolution cut?</h3>
                                     There is no generally valid resolution cut.
-                                    For example cherenkov telescopes are interested in the cherenkov light, not the charge asymetry.
-                                    Therefore losses that has no probability to produce secondaries which emits cherenkov light are useless.
+                                    For example cherenkov telescopes are
+                                    interested in the cherenkov light, not the
+                                    charge asymmetry.
+                                    Therefore losses that have no probability to produce secondaries which emit cherenkov light are useless.
 
                                     \begin{equation}
                                     E_\mathrm{min} = m c^2
