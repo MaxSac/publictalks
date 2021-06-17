@@ -1,0 +1,45 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{mathtools}
+
+\usetikzlibrary{shadings,shadows,shapes.arrows}
+
+\begin{document}
+\begin{tikzpicture}[scale=1, transform shape]
+    \draw [draw=black!20, line width=5pt, path picture={\node (source) at (path picture bounding box.center)
+        {\includegraphics[height=4cm]{build/M87.jpg}};} ] (-2,-2) rectangle (2,2);
+    \node (emission) at (0, 2.4) {\small emission of primary};
+
+    \draw [draw=black!20, line width=5pt, path picture={\node (source) at (path picture bounding box.center)
+        {\includegraphics[height=3.5cm]{build/Syncrotron.png}};} ] (4,2.5) rectangle (7,5.5);
+    \node (synchrotron) at (5.5, 5.9) {\small $\vec{F} = q\left( \vec{E} + \vec{v} \times \vec{B} \right)$};
+
+    \draw [draw=black!20, line width=5pt, path picture={\node (source) at (path picture bounding box.center)
+        {\includegraphics[height=3cm]{build/Orion.jpg}};} ] (4,1.5) rectangle (7,-1.5);
+    \node (synchrotron) at (5.5, 1.9) {\small dust and gas clouds};
+
+    \draw [draw=black!20, line width=5pt, path picture={\node (source) at (path picture bounding box.center)
+        {\includegraphics[height=4cm]{build/Blackhole.jpg}};} ] (4,-2.5) rectangle (7,-5.5);
+    \node (synchrotron) at (5.5, -2.1) {\small compact dense objects};
+
+    \draw [draw=black!20, line width=5pt, path picture={\node (source) at (path picture bounding box.center)
+        {\includegraphics[height=4cm]{build/Atmosphere.jpg}};} ] (9,-0.5) rectangle (12,-3.5);
+    \node (synchrotron) at (10.5, -0.1) {\small handle Atmosphere};
+
+    \draw [draw=black!20, line width=5pt, path picture={\node (source) at (path picture bounding box.center)
+        {\includegraphics[height=3cm]{build/Fermi.jpg}};} ] (9,0.5) rectangle (12,3.5);
+    \node (synchrotron) at (10.5, 3.9) {\small extraterrestic detectors};
+
+    \draw [draw=black!20, line width=5pt, path picture={\node (source) at (path picture bounding box.center)
+        {\includegraphics[height=3cm]{build/Hawc.jpg}};} ] (14,2.5) rectangle (17,5.5);
+
+    \draw [draw=black!20, line width=5pt, path picture={\node (source) at (path picture bounding box.center)
+        {\includegraphics[height=3cm]{build/Cta.jpg}};} ] (14,1.5) rectangle (17,-1.5);
+
+    \draw [draw=black!20, line width=5pt, path picture={\node (source) at (path picture bounding box.center)
+        {\includegraphics[height=3cm]{build/Dom.jpg}};} ] (14,-2.5) rectangle (17,-5.5);
+
+\end{tikzpicture}
+\end{document}
