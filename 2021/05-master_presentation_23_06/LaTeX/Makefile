@@ -1,5 +1,5 @@
 OBJDIR := build
-OBJS := $(addprefix $(OBJDIR)/,overview.png measureing_process.png shower.png dndx_divergence.png continuous_losses.png particle_rates.png steplength_limitation.png stackedrates.png track.png acceptance_prob.png secondaries.png secondaries_gamma.png secondaries_electron.png)
+OBJS := $(addprefix $(OBJDIR)/,overview.png measureing_process.png shower.png dndx_divergence.png continuous_losses.png particle_rates.png steplength_limitation.png stackedrates.png track.png acceptance_prob.png secondaries.png secondaries_gamma.png secondaries_electron.png deflection.png multiplescattering.png asymmetry.png interpolation_fix.png cutdependence.png)
 
 TEX_CMD = latexmk \
 		  --pdf \
@@ -55,41 +55,44 @@ $(OBJDIR)/shower.pdf: shower.tex
 $(OBJDIR)/secondaries.pdf: secondaries.tex
 	$(TEX_CMD) $<
 
-$(OBJDIR)/overview.png: $(OBJDIR)/overview.pdf
-	convert -density 300 $< $@
+# $(OBJDIR)/overview.png: $(OBJDIR)/overview.pdf
+# 	convert -density 300 $< $@
 
 $(OBJDIR)/measureing_process.png: $(OBJDIR)/measureing_process.pdf
 	convert -density 300 $< $@
 
-$(OBJDIR)/shower.png: $(OBJDIR)/shower.pdf
-	convert -density 300 $< $@
+# $(OBJDIR)/shower.png: $(OBJDIR)/shower.pdf
+# 	convert -density 300 $< $@
 
-$(OBJDIR)/dndx_divergence.png: dndx_divergence.pdf
-	convert -density 300 $< $@
+# $(OBJDIR)/dndx_divergence.png: dndx_divergence.pdf
+# 	convert -density 300 $< $@
 
-$(OBJDIR)/continuous_losses.png: continuous_losses.pdf
-	convert -density 300 $< $@
+# $(OBJDIR)/continuous_losses.png: continuous_losses.pdf
+# 	convert -density 300 $< $@
 
-$(OBJDIR)/steplength_limitation.png: steplength_limitation.pdf
-	convert -density 300 $< $@
+# $(OBJDIR)/steplength_limitation.png: steplength_limitation.pdf
+# 	convert -density 300 $< $@
 
-$(OBJDIR)/particle_rates.png: particle_rates.pdf
-	convert -density 300 $< $@
+# $(OBJDIR)/particle_rates.png: particle_rates.pdf
+# 	convert -density 300 $< $@
 
-$(OBJDIR)/stackedrates.png: stackedrates.pdf
-	convert -density 300 $< $@
+# $(OBJDIR)/stackedrates.png: stackedrates.pdf
+# 	convert -density 300 $< $@
 
-$(OBJDIR)/track.png: track.pdf
-	convert -density 300 $< $@
+# $(OBJDIR)/track.png: track.pdf
+# 	convert -density 300 $< $@
 
-$(OBJDIR)/acceptance_prob.png: acceptance_prob.pdf
-	convert -density 300 $< $@
+# $(OBJDIR)/acceptance_prob.png: acceptance_prob.pdf
+# 	convert -density 300 $< $@
 
 $(OBJDIR)/secondaries.png: $(OBJDIR)/secondaries.pdf
 	convert -density 300 -colorspace RGB $< $@
 
-$(OBJDIR)/secondaries_%.png: $(OBJDIR)/secondaries_%.pdf
-	convert -density 300 -colorspace RGB $< $@
+$(OBJDIR)/secondaries_%.png: secondaries_%.pdf
+	convert -density 300 $< $@
+
+$(OBJDIR)/%.png: %.pdf
+	convert -density 300 $< $@
 
 $(OBJS): | $(OBJDIR)
 
