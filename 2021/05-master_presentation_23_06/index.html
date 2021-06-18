@@ -117,9 +117,8 @@
                     </div>
                 </section>
                 <section>
-                    <div class="wrap size-50">
-                        <h2><strong>Use the Photon and Lepton Propagator PROPOSAL</strong></h2>
-                    </div>
+                    <div class="wrap size-60">
+                        <h2><strong>How can PROPOSAL help to generate EM Cascades?</strong></h2>
                         <ul class="flexblock steps">
                             <li>
                                 <h2>initial</h2>
@@ -138,12 +137,114 @@
                                 </p>
                             </li>
                         </ul>
+                    </div>
                 </section>
 
                 <section>
-                    \begin{equation}
-                    \sigma_\mathrm{tot} = \int_{\nu_{\min}}^{\nu_{\max}} \frac{\mathrm{d}\sigma(E)}{\mathrm{d} \nu} \, \mathrm{d}\nu
-                    \end{equation}
+                    <div class="wrap size-60">
+                        <h2><strong>Cross-Section Divergence Problem</strong></h2>
+                        <p class="text-intro">
+                        Interaktionen werde  in proposal in der Regel auf basis von differential cross-sections berechnet.
+                        The rates can be calculated by integration over the physical kinematic limits.
+                        some of them diverge so that a threshold is necessary below which losses aren't handled continuously.
+                        </p>
+                        <p>
+                        Die vorliegenden Wirkungsquerschnitte in PROPOSAL sin in
+                        der Regel differentiell im relativen Energieverlustes
+                        $\nu$ parametriziert.
+                        Um die Rate eines wirkungsquerschnitts zu berechnen
+                        wird dieser von dem unteren unteren kinematischen limit bis zu
+                        oberen integriert.
+                        Um das mehrfache Integrieren zu verhindern koennen
+                        zwei dimensionale interpolanten verwendet werden in
+                        $(\nu, E)$.
+                        </p>
+                        \begin{equation}
+                        \sigma_\mathrm{tot} = \int_{\nu_{\min}}^{\nu_{\max}} \frac{\mathrm{d}\sigma(E)}{\mathrm{d} \nu} \, \mathrm{d}\nu
+                        \end{equation}
+                        <p>
+                        Manche der elektromagnetischen Wirkungsquerschnitte divergieren fuer kleine relative Energieuebertraege $\nu \rightarrow \nu_{\min}$.
+                        Ein Beispiel ist der Bremsstrahlungswirkungsquerschnitt
+                        welcher unten Abgebildet ist.
+                        </p>
+                        <img src="LaTeX/build/dndx_divergence.png" alt="" class="aligncenter size-50"/>
+                        <p> Zweckmaessiger weise wird ein relativer
+                        Verlustschnitt $\nu_\mathrm{cut}(E)$ eingefuehrt
+                        unterhalb dem prozesse nicht mehr stoschastisch
+                        betrachtet werden.
+                        Sie lassen sich jedoch noch als kontinuierlicher
+                        Energieverlust beruecksichtigen.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap size-60">
+                        <h2><strong>Continuous losses</strong></h2>
+                        <img class="aligncenter size-50" src="LaTeX/build/continuous_losses.png" alt="">
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap size-60">
+                        <h2><strong>Mean free path length</strong></h2>
+                        <img class="aligncenter size-50" src="LaTeX/build/particle_rates.png" alt="">
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap size-60">
+                        <h2><strong>Stacked Rates</strong></h2>
+                        <img class="aligncenter size-50" src="LaTeX/build/stackedrates.png" alt="">
+                    </div>
+                </section>
+
+
+                <section>
+                    <div class="wrap size-60">
+                        <h2><strong>How it is connected?</strong></h2>
+
+                        <img class="aligncenter size-50" src="LaTeX/build/track.png" alt="">
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap size-60">
+                        <h2><strong>Sampling next stochastic interaction point</strong></h2>
+                        <ul class="flexblock features">
+                            <li>
+                                <h3>PROPOSAL approach</h3>
+                                \begin{equation}
+                                \xi > \xi_0= \exp \left(
+                                \int_{E_\mathrm{i}}^{e_\mathrm{low}} \frac{\sigma(E)}{f(E)} \, \mathrm{d}E \right)
+                                \end{equation}
+                            </li>
+                            <li>
+                                <h3>CORSIKA approach</h3>
+                                \begin{equation}
+                                \Pr ( \min \{ X_1, \ldots X_n \} > x) = \lambda^{-1} \exp \left( \frac{x}{\lambda} \right)
+                                \end{equation}
+
+                                \begin{equation}
+                                p_\mathrm{acc} ( E, E_\mathrm{i}) = \frac{\lambda(E)}{\lambda(E_i)}
+                                \end{equation}
+                            </li>
+                        </ul>
+                        <img class="aligncenter size-50" src="LaTeX/build/acceptance_prob.png" alt="">
+                        <img class="aligncenter size-50" src="LaTeX/build/steplength_limitation.png" alt="">
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap size-60">
+                        <h2><strong>Secondaries Production</strong></h2>
+
+                        <img class="aligncenter size-30" src="LaTeX/build/secondaries.png" alt="" style="max-width:200pt;">
+
+                        \begin{equation}
+                        \int_{\rho_{\min}}^{\rho_{\max}} \frac{\mathrm{d}\sigma(E, \nu)}{\mathrm{d} \rho \cdot \mathrm{d} \nu} \, \mathrm{d}\rho
+                        \end{equation}
+                    </div>
                 </section>
             </article>
         </main>

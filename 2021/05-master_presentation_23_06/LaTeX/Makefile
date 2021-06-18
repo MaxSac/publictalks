@@ -1,5 +1,5 @@
 OBJDIR := build
-OBJS := $(OBJDIR)/overview.png
+OBJS := $(addprefix $(OBJDIR)/,overview.png measureing_process.png shower.png dndx_divergence.png continuous_losses.png particle_rates.png steplength_limitation.png stackedrates.png track.png acceptance_prob.png secondaries.png secondaries_gamma.png secondaries_electron.png)
 
 TEX_CMD = latexmk \
 		  --pdf \
@@ -46,10 +46,13 @@ $(OBJDIR)/Dom.jpg: | $(OBJDIR)
 $(OBJDIR)/overview.pdf: overview.tex $(addprefix $(OBJDIR)/,Crab.jpg FermiLAT.jpg IceCube.jpg)
 	$(TEX_CMD) $<
 
-$(OBJDIR)/measureing_process.pdf: measureing_process.tex
+$(OBJDIR)/measureing_process.pdf: measureing_process.tex $(addprefix $(OBJDIR)/,M87.jpg Syncrotron.png Orion.jpg Blackhole.jpg Atmosphere.jpg Fermi.jpg Hawc.jpg Cta.jpg Dom.jpg)
 	$(TEX_CMD) $<
 
 $(OBJDIR)/shower.pdf: shower.tex
+	$(TEX_CMD) $<
+
+$(OBJDIR)/secondaries.pdf: secondaries.tex
 	$(TEX_CMD) $<
 
 $(OBJDIR)/overview.png: $(OBJDIR)/overview.pdf
@@ -60,6 +63,33 @@ $(OBJDIR)/measureing_process.png: $(OBJDIR)/measureing_process.pdf
 
 $(OBJDIR)/shower.png: $(OBJDIR)/shower.pdf
 	convert -density 300 $< $@
+
+$(OBJDIR)/dndx_divergence.png: dndx_divergence.pdf
+	convert -density 300 $< $@
+
+$(OBJDIR)/continuous_losses.png: continuous_losses.pdf
+	convert -density 300 $< $@
+
+$(OBJDIR)/steplength_limitation.png: steplength_limitation.pdf
+	convert -density 300 $< $@
+
+$(OBJDIR)/particle_rates.png: particle_rates.pdf
+	convert -density 300 $< $@
+
+$(OBJDIR)/stackedrates.png: stackedrates.pdf
+	convert -density 300 $< $@
+
+$(OBJDIR)/track.png: track.pdf
+	convert -density 300 $< $@
+
+$(OBJDIR)/acceptance_prob.png: acceptance_prob.pdf
+	convert -density 300 $< $@
+
+$(OBJDIR)/secondaries.png: $(OBJDIR)/secondaries.pdf
+	convert -density 300 -colorspace RGB $< $@
+
+$(OBJDIR)/secondaries_%.png: $(OBJDIR)/secondaries_%.pdf
+	convert -density 300 -colorspace RGB $< $@
 
 $(OBJS): | $(OBJDIR)
 
