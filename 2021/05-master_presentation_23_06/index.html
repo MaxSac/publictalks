@@ -65,42 +65,77 @@
                     <div class="wrap size-60">
                         <h2><strong>Atomspheric Cascades</strong></h2>
                         <p class="text-intro">
-                        If a particle hits the atmosphere, it patitions its energy into the production of secondary particles.
-                        The evolution of the showers depends on the initial particle, because the different components of the showers have different strengths.
+                        If a particle hits the atmosphere, it patitions its
+                        energy due particle losses into the production of secondary particles.
+                        Depending on the initial particle type,
+                        the particle showers develop characteristic components of varying intensity.
                         </p>
                         <div class="aligncenter">
                             <img src="./LaTeX/build/shower.png" alt=""/>
                         </div>
                         <p>
                         The shower regions can be subdevided into three
-                        different components. In an electron or photon induced shower only
-                        the electromagnetic component is visible.
-                        In a hadronic shower all three components can be
-                        observed.
-                        Shown is an 1 PeV shower with the default corsika cuts.
+                        different components, the electromagnetic (em), muonic and
+                        hadronic component.
+                        Shown are a proton-induced and an electron-induced shower
+                        with an initial particle energy of $1\,\mathrm{PeV}$ using the most
+                        complete model currently available in CORSIKA8.
+                        Die Schauer unterscheiden sich in der Anzahl an
+                        produzierten hadronen und muonen.
+                        For electron or gamma induced showers,
+                        the loss by muons or hadronic particles is a subdominant process.
+                        It is currently missing in the em description and will be added in the near future.
+                        Due to the higher radiation losses for em processes,
+                        these are more compact and have a smaller deviation from
+                        the shower core (lateral distribution).
                         </p>
+                    </div>
+                    <hr>
+                    <div class="wrap size-85">
                         <ul class="flexblock features">
                             <li>
                                 <div>
                                     <h3>
-                                        <span>$e/\gamma$</span> electromagnetic component
+                                        <span>$e/\gamma$</span> electromagnetic
                                     </h3>
-                                    <p>Good karma. Just the right features. 100% customizable. Make it yours.
+                                    <p>
+                                    Electrons and photons deposit their loss energy dominantly into the production of further photons and electrons positrons.
+                                    Their radiation length is much smaller than that of muons, so their range is much smaller.
+                                    High-energy particles usually do not have
+                                    any significant deviation from the shower
+                                    axis.
+                                    </p>
+                                    <p>
+                                    For higher energyies it can be simplified as
+                                    a sequence of bremsstrahlung and pair
+                                    production losses before the energy is no
+                                    longer sufficient to produce further particles.
                                     </p>
                                 </div>
                             </li>
                             <li>
                                 <div>
                                     <h3>
-                                        <span>$\mu$</span> muonic component
+                                        <span>$\mu$</span> muonic
                                     </h3>
-                                    <p>Content is for demo purposes only. Minimum effort, amazing results.</p>
+                                    <p>
+                                    In hadronic as well as electromagnetic processes muons or particles can be produced which decay to muons.
+                                    The dominant process is the production by hadronic interactions of charged pions which decays by a leptonic decay into a muon.
+                                    \begin{equation}
+                                    \pi^+ \rightarrow \mu^+ + \nu_\mu
+                                    \end{equation}
+                                    There is also a chance to produce muons via electromagnetic processes like
+                                    \begin{equation}
+                                    e^- + \ce{^N_ZA} \rightarrow e^- + \ce{^N_ZA} + \mu^+ + \mu^-
+                                    \end{equation}
+                                    or inelastic interactions with the nuclei.
+                                    </p>
                                 </div>
                             </li>
                             <li>
                                 <div>
                                     <h3>
-                                        <span>$\ce{^{4}_{2}He}$</span> hadronic component
+                                        <span>$\ce{^{4}_{2}He}$</span> hadronic
                                     </h3>
                                     <p>Content is for demo purposes only. Minimum effort, amazing results.</p>
                                 </div>
@@ -117,11 +152,12 @@
                             <ul class="flexblock reasons">
                                 <li>
                                     <h3>How does the Particle trajectory looks like?</h3>
-                                    <p>Split into sub trajectories </p>
+                                    <p>Split into sub trajectories, describe physics on the sub trajectories</p>
                                 </li>
                                 <li>
                                     <h3>Which particles are produced along the trajectory?</h3>
-                                    <p>Produce secondaries caused by the primary losses.</p>
+                                    <p>Produce secondaries caused by the primary
+                                    losses, above a certain energy threshold</p>
                                 </li>
                             </ul>
                         </div>
@@ -197,6 +233,12 @@
                         <h2><strong>Continuous losses</strong></h2>
                         <img class="aligncenter size-50" src="LaTeX/build/continuous_losses.png" alt="">
                     </div>
+
+                    \begin{equation}
+                        \int^{x_\mathrm{i}}_{x_\mathrm{f}} \rho(x)
+                        \mathrm{d}x = \int^{E_\mathrm{i}}_{E_\mathrm{f}}
+                        \frac{1}{f(E)} \, \mathrm{d}E
+                    \end{equation}
                 </section>
 
                 <section>
@@ -369,7 +411,7 @@
 
                         <hr>
                         <h3>cubic interpolation<a class="button zoomIn
-                                                         alignright" href="https://github.com/MaxSac/cubic_interpolation"> Have a look at GitHub </a>
+                                                             alignright" href="https://github.com/MaxSac/cubic_interpolation"> Have a look at GitHub </a>
                         </h3>
                         <img class="aligncenter size-60" src="LaTeX/build/restricted_energy_range.png" alt="">
 
