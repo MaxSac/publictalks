@@ -1,5 +1,5 @@
 OBJDIR := build
-OBJS := $(addprefix $(OBJDIR)/,overview.png measureing_process.png shower.png dndx_divergence.png continuous_losses.png particle_rates.png steplength_limitation.png stackedrates.png track.png acceptance_prob.png secondaries.png secondaries_gamma.png secondaries_electron.png deflection.png multiplescattering.png asymmetry.png interpolation_fix.png cutdependence.png statemachine.png multiplescattering_sketch.png longprof.png xmax.png chargeexcess.png lateralprof.png lateral_energydeposition.png radiodata_100.png cherenkov.png lpmeffect.png secondaries_deflection.png)
+OBJS := $(addprefix $(OBJDIR)/,overview.png measureing_process.png shower.png dndx_divergence.png continuous_losses.png particle_rates.png steplength_limitation.png stackedrates.png track.png acceptance_prob.png secondaries.png secondaries_gamma.png secondaries_electron.png deflection.png multiplescattering.png asymmetry.png interpolation_fix.png cutdependence.png statemachine.png multiplescattering_sketch.png longprof.png xmax.png chargeexcess.png lateralprof.png lateral_energydeposition.png radiodata_100.png cherenkov.png lpmeffect.png secondaries_deflection.png restricted_energy_range.png)
 
 TEX_CMD = latexmk \
 		  --pdf \
