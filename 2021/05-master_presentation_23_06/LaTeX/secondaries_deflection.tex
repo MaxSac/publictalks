@@ -1,8 +1,7 @@
-
 \documentclass{standalone}
 
 \usepackage{tikz}
-\usetikzlibrary{automata,arrows}
+\usetikzlibrary{automata,arrows, fit, backgrounds}
 \usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{xcolor}
 
@@ -45,5 +44,17 @@
             \node[left] at (z1) {$Z$};
             \node[right] at (z2) {$Z$};
         \end{feynman}
+
+    \begin{scope}[on background layer]
+        \node [draw=black, fill=gray!15, ellipse, rotate=13, fit=(i1) (f3), opacity=0.5] (st) {};
+        \node [draw=black, fill=gray!15, ellipse, fit=(F1) (F2), opacity=0.5]
+            (sec){};
+        \node [draw=black, fill=gray!15, ellipse, fit=(F3),opacity=0.5 ] (ms) {};
+
+        \node [rotate=28, yshift=1.1cm, xshift=-1.5cm] at (st) {stochastic deflection};
+        \node [above, yshift=0.6cm] at (ms) {multiple scattering};
+        \node [xshift=1.8cm, text width=2cm] at (sec) {secondaries angular};
+    \end{scope}
+
     \end{tikzpicture}
 \end{document}

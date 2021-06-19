@@ -13,8 +13,6 @@
             <article id="webslides" class="horizontal">
                 <!-- Slide 1 -->
                 <section>
-                    <!-- <span class="background-right-bottom" style="background-image:url('images/tu_logo.png')"></span> -->
-
                     <div class="wrap">
                         <h1><strong>First electromagnetic interaction model in CORSIKA8 using the Monte Carlo simulation tool PROPOSAL</strong></h1>
                         <p class="text-intro">
@@ -221,6 +219,8 @@
                         <h2><strong>How it is connected?</strong></h2>
 
                         <img class="aligncenter size-50" src="LaTeX/build/track.png" alt="">
+                        <img class="aligncenter size-50" src="LaTeX/build/statemachine.png" alt="">
+
                     </div>
                 </section>
 
@@ -281,6 +281,10 @@
                 <section>
                     <div class="wrap size-60">
                         <h2><strong>Lateral Distribution</strong></h2>
+
+                        <img class="aligncenter"
+                        src="LaTeX/build/secondaries_deflection.png" alt=""
+                        style="max-width:400pt">
                         <ul class="flexblock plans blink">
                             <li>
                                 <h2>Multiple Scattering</h2>
@@ -311,7 +315,33 @@
                     <div class="wrap size-60">
                         <h3>Multiple Scattering</h3>
 
+                        <img class="aligncenter size-60" src="LaTeX/build/multiplescattering_sketch.png" alt="">
+
+                    </div>
+                    <div class="wrap size-90">
+                        <ul class="flexblock features">
+                            <li>
+                                \begin{equation}
+                                \theta_0 = \frac{13.6 \, \mathrm{MeV}}{\beta c p }
+                                \sqrt{\frac{X}{X_0}} \left[ 1+ 0.088 \log_{10}
+                                \left( \frac{X}{X_0} \right) \right]
+                                \end{equation}
+                            </li>
+                            <li>
+                                \begin{equation}
+                                \theta_0 = 13.6 \, \mathrm{MeV}
+                                \sqrt{\frac{X}{X_0}} \left[ 1+ 0.088 \log_{10}
+                                \left( \frac{X}{X_0} \right) \right]
+                                \sqrt{ \int^{E^\mathrm{f}}_{E_\mathrm{i}} \mathrm{d}
+                                E \frac{E^2}{p^4} \frac{1}{-f(E) X_0}}
+                                \end{equation}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="wrap size-60">
                         <img class="aligncenter size-60" src="LaTeX/build/multiplescattering.png" alt="">
+
                     </div>
                 </section>
 
@@ -375,39 +405,61 @@
 
 
                 <section>
-                    <h2><strong>longitudinal profile</strong></h2>
+                    <div class="wrap size-60">
+                        <h2><strong>longitudinal profile</strong></h2>
 
-                    <h3>$X_{\max}$ distribution</h3>
+                        <img class="aligncenter size-50" src="LaTeX/build/longprof.png" alt="">
 
-                    <h3>askarian effect</h3>
+                        <h3>$X_{\max}$ distribution</h3>
+
+                        <img class="aligncenter size-50" src="LaTeX/build/xmax.png" alt="">
+
+                        <h3>askarian effect</h3>
+
+                        <img class="aligncenter size-50"
+                             src="LaTeX/build/chargeexcess.png" alt="">
+
+                    </div>
                 </section>
 
                 <section>
-                    <h2><strong>lateral profile</strong></h2>
+                    <div class="wrap size-60">
 
-                    <h3>energy depo</h3>
+                        <h2><strong>lateral profile</strong></h2>
+                        <img class="aligncenter size-50" src="LaTeX/build/lateralprof.png" alt="">
+
+                        <h3>energy depo</h3>
+                        <img class="aligncenter size-50" src="LaTeX/build/lateral_energydeposition.png" alt="">
+
+                    </div>
                 </section>
 
                 <section>
                     <h2><strong>modules based on em calculations</strong></h2>
 
+
                     <h3>radio</h3>
+                    <img class="aligncenter size-50"
+                         src="LaTeX/build/radiodata_100.png" alt="">
 
                     <h3>cherenkov</h3>
+                    <img class="aligncenter size-50"
+                         src="LaTeX/build/cherenkov.png" alt=""/>
                 </section>
 
                 <section>
-                    <h2> <strong> Outlook </strong> </h2>
+                    <div class="wrap size-60">
+                        <h2> <strong> Outlook </strong> </h2>
 
-                    <h3>lpm</h3>
+                        <h3>Landau–Pomeranchuk–Migdal effect</h3>
+                        <img class="aligncenter size-50" src="LaTeX/build/lpmeffect.png" alt="">
 
-                    <h3>photonuclear</h3>
+                        <h3>photonuclear and mupairproduction</h3>
 
-                    <h3>mupairproduction</h3>
+                        <h3>interpolation</h3>
 
-                    <h3>interpolation</h3>
-
-                    <h3>backward monte carlo</h3>
+                        <h3>backward monte carlo</h3>
+                    </div>
                 </section>
             </article>
         </main>
