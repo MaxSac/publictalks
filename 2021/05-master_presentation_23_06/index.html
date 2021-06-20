@@ -172,72 +172,70 @@
                         </p>
 
                         <h3>Development flow</h3>
-                        <p>
-                        In recent years, more and more experiments have been using PROPOSAL such as IceCube, Pico, RNO-O or NuMuRadioMC.
-This requires more and more precise models and a high degree of flexibility.
-                        </p>
+                        <!-- <p> -->
+                        <!-- In recent years, more and more experiments have been using PROPOSAL such as IceCube, Pico, RNO-O or NuMuRadioMC. -->
+                        <!-- This requires more and more precise models and a high degree of flexibility. -->
+                        <!-- </p> -->
                     </div>
-                    <div class="wrap size-75">
+                    <div class="wrap size-60">
                         <ul class="flexblock steps">
                             <li>
                                 <h4>Initial idea (2004)</h4>
                                 <p class="text-quote">
                                 An accurate simulation of the propagation of muons through large amounts of matter is needed forthe analysis of data produced by muon/neutrino undergroundexperiments.</p>
-                                <p>
-                                <cite>
-                                    <a href="https://arxiv.org/abs/hep-ph/0407075v3" target="_blank">@D.Chirkin</a>
-                                </cite>
-                                </p>
+                                <!-- <cite> -->
+                                <!--     <a href="https://arxiv.org/abs/hep-ph/0407075v3" target="_blank">@D.Chirkin</a> -->
+                                <!-- </cite> -->
                             </li>
-                            <li>
-                                <div class="process step-2"> </div>
-                                <h4>Advancement to PROPOSAL (2013)</h4>
-                                <p>Restructuring in the programming language C++.
-                                Adding the possibility to propagate electrons
-                                through homogeneous media.
-                                </p>
-                                <cite>
-                                    <a href="http://dx.doi.org/10.17877/DE290R-13191"
-                                       target="_blank">J.-H. Köhne</a>
-                                </cite>
-                            </li>
-                            <li>
-                                <div class="process step-3"> </div>
-                                <h4>Improvement / impelemtation of
-                                    cross sections (2018/2020)</h4>
-                                <p>
-                                Improvements of cross sections of high-energy
-                                muons are calculated.
-                                </p>
-                                <cite>
-                                    <a href="http://dx.doi.org/10.17877/DE290R-19810"
-                                       target="_blank">A. Sandrock</a>
-                                </cite>
-                                <p>
-                                Cross sections necessary for photon and electron
-                                propagation are added.
-                                </p>
-                                <cite>
-                                    <a
-                                        href="https://nextcloud.e5.physik.tu-dortmund.de/index.php/apps/files/?dir=/Abschlussarbeiten/Masterarbeiten&openfile=205541"
-                                        target="_blank">J.-M. Alameddine</a>
-                                </cite>
-                            </li>
+                            <!-- <li> -->
+                            <!--     <div class="process step-2"> </div> -->
+                            <!--     <h4>Advancement to PROPOSAL (2013)</h4> -->
+                            <!--     <p>Restructuring in the programming language C++. -->
+                            <!--     Adding the possibility to propagate electrons -->
+                            <!--     through homogeneous media. -->
+                            <!--     </p> -->
+                            <!--     <cite> -->
+                            <!--         <a href="http://dx.doi.org/10.17877/DE290R-13191" -->
+                            <!--            target="_blank">J.-H. Köhne</a> -->
+                            <!--     </cite> -->
+                            <!-- </li> -->
+                            <!-- <li> -->
+                            <!--     <div class="process step-3"> </div> -->
+                            <!--     <h4>Improvement / impelemtation of -->
+                            <!--         cross sections (2018/2020)</h4> -->
+                            <!--     <p> -->
+                            <!--     Improvements of cross sections of high-energy -->
+                            <!--     muons are calculated. -->
+                            <!--     </p> -->
+                            <!--     <cite> -->
+                            <!--         <a href="http://dx.doi.org/10.17877/DE290R-19810" -->
+                            <!--            target="_blank">A. Sandrock</a> -->
+                            <!--     </cite> -->
+                            <!--     <p> -->
+                            <!--     Cross sections necessary for photon and electron -->
+                            <!--     propagation are added. -->
+                            <!--     </p> -->
+                            <!--     <cite> -->
+                            <!--         <a -->
+                            <!--             href="https://nextcloud.e5.physik.tu-dortmund.de/index.php/apps/files/?dir=/Abschlussarbeiten/Masterarbeiten&openfile=205541" -->
+                            <!--             target="_blank">J.-M. Alameddine</a> -->
+                            <!--     </cite> -->
+                            <!-- </li> -->
                             <li>
                                 <div class="process step-4"> </div>
                                 <h4>Library solveing sub-tasks of
-                                    cascade simulation (2021)</h4>
+                                    em cascade simulation (2021)</h4>
                                 <p>
                                 Modularization of the calculations,
                                 so that can be utilized by external libraries.
                                 Use of the library to calculate the electromagnetic interactions
                                 and losses in the CORSIKA8 simulation.
                                 </p>
-                                <cite>
-                                    <a
-                                        href="https://nextcloud.e5.physik.tu-dortmund.de/index.php/apps/files/?dir=/Abschlussarbeiten/Masterarbeiten&openfile=443719"
-                                        target="_blank">M. Sackel</a>
-                                </cite>
+                                <!-- <cite> -->
+                                <!--     <a -->
+                                <!--         href="https://nextcloud.e5.physik.tu-dortmund.de/index.php/apps/files/?dir=/Abschlussarbeiten/Masterarbeiten&openfile=443719" -->
+                                <!--         target="_blank">M. Sackel</a> -->
+                                <!-- </cite> -->
                             </li>
                         </ul>
                     </div>
@@ -298,43 +296,195 @@ This requires more and more precise models and a high degree of flexibility.
                 <section>
                     <div class="wrap size-60">
                         <h2><strong>Continuous losses</strong></h2>
+                        <p class="text-intro">
+                        A particle traveling a distance through a media losses
+                        energy due different interaction processes.
+                        Below an energy threshold, it is not feasible to stochastically resolve all losses.
+                        Instead, they are combined into an averaged ensemble.
+                        </p>
+
+                        <p>
+                        Um den Energie zu berechnen die ein Teilchen besitzt
+                        nachdem es eine Strecke von dem punkt $x_i$ zu dem punkt
+                        $x_j$
+                        zuruecklegt wird die Trajektorie in infinitesimal kleine
+                        Stuecke aufgeteilt.
+                        </p>
 
                         <img class="aligncenter size-50" src="LaTeX/build/propagation_step.png" alt="" style="max-width:250pt">
 
-                        \begin{equation}
-                        \sum_\mathrm{inter} \frac{\mathrm{d}E_\mathrm{inter}}{\mathrm{d}X} = -f(E)
-                        \end{equation}
+                        <p>
+                        Ist der gemittelte Energieverlust pro infinitesimal Wegstrecke bekannt,
+                        kann anhand des wissens der Teilchenenergie entlang der Trajektorie,
+                        der Energieverlust berechnet werden.
+                        In der Abbildung ist der Energieverlust fuer die drei
+                        teilchentypen dargestellt wenn sie ausschliesslich ueber
+                        den kontinuierlichen Prozess ihre Energie verlieren
+                        dargestellt.
+                        </p>
+
                         <img class="aligncenter size-50" src="LaTeX/build/continuous_losses.png" alt="">
+
+                        <p>
+                        Zweckmaessiger weise werden die kontinuierlichen
+                        Prozesse zu einem kontinuierlichen Verlust zusammengefasst,
+                        da keine Aussage getroffen werden kann ueber welchen
+                        Prozess der Verlust stattgefunden hat.
+                        </p>
+
+                        \begin{equation}
+                        \sum_\mathrm{inter} \frac{\mathrm{d}E_\mathrm{inter}}{\mathrm{d}X}(E) = -f(E)
+                        \end{equation}
+
+                        <p>
+                        Durch suche des oberen integrationslimits kann fuer ein
+                        bekanntes dichte profile $\rho(x)$ sowohl die Energie
+                        nach einer zurueckgelegten distanz, als auch die Distanz
+                        nach einem gegeben Energieverlustes bestimmt werden.
+                        </p>
+
+                        \begin{equation}
+                        \int^{x_\mathrm{i}}_{x_\mathrm{f}} \rho(x)
+                        \mathrm{d}x = \int^{E_\mathrm{i}}_{E_\mathrm{f}}
+                        \frac{1}{f(E)} \, \mathrm{d}E
+                        \end{equation}
                     </div>
 
-                    \begin{equation}
-                    \int^{x_\mathrm{i}}_{x_\mathrm{f}} \rho(x)
-                    \mathrm{d}x = \int^{E_\mathrm{i}}_{E_\mathrm{f}}
-                    \frac{1}{f(E)} \, \mathrm{d}E
-                    \end{equation}
                 </section>
 
                 <section>
                     <div class="wrap size-60">
                         <h2><strong>Mean free path length</strong></h2>
+
+                        <p class="text-intro">
+                        Durch die Wahl der Energie ab welcher stochastische
+                        Verluste berechnet werden sollen aendert sich die Rate
+                        fuer die interaktionen.
+                        Dies fuehrt zu anderen Schrittweiten und beeinflusst massgeblich neben
+                        der untere Grenze des detektierbaren spektrums die Laufzeit des Programms.
+                        </p>
+
                         <img class="aligncenter size-50" src="LaTeX/build/particle_rates.png" alt="">
+
+                        <p>
+                        fuer verschiedene stochastische Energie schnitte aendert
+                        sich das Verhaeltniss der Schrittweiten und des
+                        Energieverlustes pro Energie.
+                        Dies fuehrt dazu, dass durch entsprechende Schwellwert
+                        wahl effekte die zuvor subdominant waren zu dominaten
+                        Prozessen werden.
+                        </p>
                     </div>
                 </section>
 
                 <section>
                     <div class="wrap size-60">
                         <h2><strong>Stacked Rates</strong></h2>
+
+                        <p class="text-intro">
+                        Welche groesse besitzt der stochastische Energieverlust zu dem gesampelten Ort?
+                        </p>
+
+                        <h3>Sample process</h3>
+                    </div>
+                    <div class="wrap size-70">
+                        <ul class="flexblock steps">
+                            <li>
+                                <h4>rates per target and interaction</h4>
+                                <p>
+                                Calculates and store the interaction rates for each possible target.
+                                The interaction are represent by different colors and the targets by different opacities.
+                                </p>
+                            </li>
+                            <li>
+                                <div class="process step-2"></div>
+                                <h4>sample from overall rate</h4>
+                                Build the overall rate and sample an interaction rate by the use of only one random number.
+                                In the picture below $0.42 \cdot \texttt{overall_rate}.$
+                            </li>
+                            <li>
+                                <div class="process step-3"></div>
+                                <h4>search target and interaction</h4>
+                                Check which intervall of the interaction target tuple correspond to the sampled rate.
+                            </li>
+                            <li>
+                                <div class="process step-4"></div>
+                                <h4>determine loss to rate</h4>
+                                Search the upper limit for the choosen tuple.
+                                \begin{equation}
+                                \sigma_\text{loss} = \int_{\nu_\mathrm{cut}}^{\nu_\mathrm{loss}} \frac{\mathrm{d}\sigma(E)}{\mathrm{d}\nu} \, \mathrm{d} \nu
+                                \end{equation}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="wrap size-60">
+                        <h3>Sample electron loss</h3>
+
+                        <p>
+                        Beispielhafte bestimmung der groesse eines
+                        Elektronverlustes bei einer Erngie von XXX MeV und einem
+                        stochastizitaets Schwellwert von XXX MeV.
+                        </p>
+
                         <img class="aligncenter size-50" src="LaTeX/build/stackedrates.png" alt="">
+
+                        <p>Basierend aus dem wissen der Teilchenergie und der
+                        Verlusttypen sowie die Verlustenergie kann zu einem
+                        beliebigen Zeitupunkt die entsprechenden erzeugten
+                        Sekundaerteilchen erzeugt werden.</p>
                     </div>
                 </section>
 
 
                 <section>
                     <div class="wrap size-60">
-                        <h2><strong>How it is connected?</strong></h2>
+                        <h2><strong>How is it all connected?</strong></h2>
+                        <p class="text-intro">
+                        The physical problems solved on the basis of different modules.
+                        Different problems can be solved by combining them.
+                        On the basis of the same modules on which the
+                        electromagnetic shower calculations for CORSIKA8 are based,
+                        the current PROPSOAL propagator can be assembled.
+                        </p>
+
+                        <img class="aligncenter size-50" src="LaTeX/build/statemachine.png" alt="">
+
+                        <p>
+                        One propagation step of the propagation loop performed
+                        by the PROPOSAL propagator approximates the task area
+                        covered by the em module in CORSIKA.
+                        For this purpose, based on the particle condition
+                        $q_i$ the maximum energy at which a decay $E_\mathrm{d}$,
+                        the next stochastic interaction $E_\mathrm{i}$,
+                        or a condition $E_\mathrm{c}$ is fullfilled, is
+                        calculated.
+                        A condition can be for example the maximum continuous
+                        energy loss or a maximum distance.
+                        The particle is moved to the position of maximum energy
+                        and if the condition or decay energy is maximum,
+                        the propagator terminates.
+                        After that it is possible to calculate the decay spectrum
+                        of the lepton if it is of interest.
+                        Based on the state before $q_i$ and after the continuous loss
+                        $q_\mathrm{CL}$ the effect of inelastic Coulomb scattering
+                        processes can be taken into account as a correction.
+                        </p>
 
                         <img class="aligncenter size-50" src="LaTeX/build/track.png" alt="">
-                        <img class="aligncenter size-50" src="LaTeX/build/statemachine.png" alt="">
+
+                        <p>
+                        Subsequently, the interaction rates $R$ are calculated
+                        and an interaction and a loss are sampled.
+                        The directional deflection due to the interaction can be
+                        taken into account on the state of the primary particle
+                        after the stochastic loss $q_\mathrm{Inter}$ as a
+                        direction correction.
+                        Subsequently, the state $q_\mathrm{inter}$ forms the
+                        intial state $q_{i+1}$ of the next propagation step.
+                        At any time the secondary particles
+                        $q_\mathrm{secondaries}$ of a state $q_\mathrm{inter}$
+                        can be calculated.
+                        </p>
 
                     </div>
                 </section>
@@ -342,26 +492,93 @@ This requires more and more precise models and a high degree of flexibility.
                 <section>
                     <div class="wrap size-60">
                         <h2><strong>Sampling next stochastic interaction point</strong></h2>
+
+                        <p class="text-intro">
+                        The location where the next stoachstic interaction takes place is sampled.
+                        On the one hand the continuous loss can be considered directly.
+                        On the other hand it can be assumed that the rate is constant and the interaction can be rejected afterwards with a probability.
+                        </p>
+
                         <ul class="flexblock features">
                             <li>
                                 <h3>PROPOSAL approach</h3>
+
+                                <p>
+                                If the trajectory is parameterized by the energy $E$ ,
+                                the next interaction point can be calculated taking
+                                into account the energy losses per path element $f(E)$.
+                                The step size corresponds to that of the stochastic processes.
+                                </p>
+
                                 \begin{equation}
-                                \xi > \xi_0= \exp \left(
-                                \int_{E_\mathrm{i}}^{e_\mathrm{low}} \frac{\sigma(E)}{f(E)} \, \mathrm{d}E \right)
+                                \int_{E_\mathrm{i}}^{E_\mathrm{f}}
+                                \frac{\sigma(E)}{f(E)} \, \mathrm{d}E =\log(\xi)
                                 \end{equation}
+
+                                <p>
+                                To calculate the distance from the energy E_f of
+                                the next stochastic loss,
+                                the upper limit of the track integral see
+                                equation \ref{eq:track_integral} must be determined.
+                                </p>
                             </li>
                             <li>
                                 <h3>CORSIKA approach</h3>
+
+                                <p>
+                                If the trajectory is parameterized by the distance $x$,
+                                the sum of the mean free path lengths $\lambda =
+                                \sum_i \lambda_i$
+                                are used to sample the next stochastic interaction point.
+                                </p>
+
                                 \begin{equation}
                                 \Pr ( \min \{ X_1, \ldots X_n \} > x) = \lambda^{-1} \exp \left( \frac{x}{\lambda} \right)
                                 \end{equation}
 
+                                <p>
+                                It is taken into account that the mean free path becomes larger due to continuous losses by rejecting the loss with probability:
+                                </p>
+
                                 \begin{equation}
                                 p_\mathrm{acc} ( E, E_\mathrm{i}) = \frac{\lambda(E)}{\lambda(E_i)}
                                 \end{equation}
+
+                                <p>
+                                This leads to the fact that the stochastic step size is smaller than necessary to describe the process.
+                                </p>
                             </li>
                         </ul>
+
+                        <hr>
+
+                        <h3>Stochastic Interaction acceptance</h3>
+                        <p>
+                        Acceptance probability of a stochastic loss for different
+                        stochastic energy thresholds.
+                        Shown is a stochastic loss in the distance of the mean
+                        free path (solid line),
+                        and a steplength where due the continuous loss 1, 10 and
+                        20 percent  of the primary energy is lost (dashed lines from top to bottom).
+                        </p>
+
                         <img class="aligncenter size-50" src="LaTeX/build/acceptance_prob.png" alt="">
+
+                        <p>
+                        For energies going towards the stochastic energy threshold, the acceptance probability decreases, since the change of the mean free path is large.
+The allowable step size through the maximum continuous is the dominant effect at low particle energies, suppressing the effect.
+                        </p>
+
+                        <hr>
+                        <h3>Continuous steplength limitations</h3>
+
+                        <p>
+                        For low energies the step size is limited by the limit
+                        of the maximum continuous energy loss (dashed line) of 10 %.
+                        This leads to the fact that the step size is much smaller
+                        than necessary for the description of the stochastic process (solid line).
+                        </p>
+
                         <img class="aligncenter size-50" src="LaTeX/build/steplength_limitation.png" alt="">
                     </div>
                 </section>
@@ -374,6 +591,7 @@ This requires more and more precise models and a high degree of flexibility.
 
                         \begin{equation}
                         \int_{\rho_{\min}}^{\rho_{\max}} \frac{\mathrm{d}\sigma(E, \nu)}{\mathrm{d} \rho \cdot \mathrm{d} \nu} \, \mathrm{d}\rho
+                        \label{eq:track_integral}
                         \end{equation}
 
                         <div class="grid">
@@ -484,7 +702,7 @@ This requires more and more precise models and a high degree of flexibility.
 
                         <hr>
                         <h3>cubic interpolation<a class="button zoomIn
-                                                                  alignright" href="https://github.com/MaxSac/cubic_interpolation"> Have a look at GitHub </a>
+                                                                      alignright" href="https://github.com/MaxSac/cubic_interpolation"> Have a look at GitHub </a>
                         </h3>
                         <img class="aligncenter size-60" src="LaTeX/build/restricted_energy_range.png" alt="">
 
