@@ -587,12 +587,39 @@ The allowable step size through the maximum continuous is the dominant effect at
                     <div class="wrap size-60">
                         <h2><strong>Secondaries Production</strong></h2>
 
+                        <p class="text-intro">
+                        The calculation of the secondary products is possible at any time
+                        from the state before the stochastic loss and the properties of the stochastic loss.
+                        </p>
+
                         <img class="aligncenter size-30" src="LaTeX/build/secondaries.png" alt="" style="max-width:200pt;">
+
+                        <p>
+                        To calculate the energy distribution of the generated particles,
+                        the asymmetry $\rho$ between the energy distribution of
+                        the secondary products is sampled.
+                        </p>
 
                         \begin{equation}
                         \int_{\rho_{\min}}^{\rho_{\max}} \frac{\mathrm{d}\sigma(E, \nu)}{\mathrm{d} \rho \cdot \mathrm{d} \nu} \, \mathrm{d}\rho
                         \label{eq:track_integral}
                         \end{equation}
+
+                        <p>
+                        For this purpose, an integration of the double differential
+                        cross section must be performed.
+                        This is a runtime-intensive process.
+                        </p>
+
+                        <hr>
+                        <h3>Study of secondaries products</h3>
+
+                        <p>
+                        For each bincenter, $10^5$ stochastic losses are
+                        performed with a lower energy threshold of $1\,\mathrm{MeV}$.
+                        For the stochastic losses the corresponding secondary particles are produced
+                        and the averaged energy of the secondary products is plotted.
+                        </p>
 
                         <div class="grid">
                             <div class="column">
@@ -608,12 +635,24 @@ The allowable step size through the maximum continuous is the dominant effect at
                                 </div>
                             </div>
                         </div>
+
+                        <p>
+                        For particle energies below $10^5$ for electrons and for
+                        $10^2\,\mathrm{MeV}$ for photons exists a charge excess between the deposited energy in electrons and positrons.
+                        The secondary products for the photonuclear interactions cannot be taken into account at present, but they are only a subdominant component for electrons.
+                        </p>
                     </div>
                 </section>
 
                 <section>
                     <div class="wrap size-60">
                         <h2><strong>Lateral Distribution</strong></h2>
+
+                        <p class="text-intro">
+                        Several processes exist that have a contribution on
+                        lateral shower widening.
+                        Their influence depends mainly on the observed energy range.
+                        </p>
 
                         <img class="aligncenter"
                              src="LaTeX/build/secondaries_deflection.png" alt=""
@@ -622,21 +661,22 @@ The allowable step size through the maximum continuous is the dominant effect at
                             <li>
                                 <h2>Multiple Scattering</h2>
                                 <p>
-                                scattering in fact of ineleatic columb
-                                scattering
+                                Deflection caused by inelastic coloumb
+                                interactions traveling a certain distance.
                                 </p>
                             </li>
                             <li>
                                 <h2>Stochastic Deflection</h2>
                                 <p>
-                                scattering in fact of ineleatic columb
-                                scattering
+                                Change of direction of the particle experiencing
+                                the stochastic loss due to the interaction.
                                 </p>
                             </li>
                             <li>
                                 <h2>Secondaries Angular</h2>
                                 <p>
-                                bla bli blub
+                                Direction of the secondary particles produced
+                                during the interaction.
                                 </p>
                             </li>
 
