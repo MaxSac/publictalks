@@ -1,5 +1,5 @@
 OBJDIR := build
-OBJS := $(addprefix $(OBJDIR)/,overview.png measureing_process.png shower.png dndx_divergence.png continuous_losses.png particle_rates.png steplength_limitation.png stackedrates.png track.png acceptance_prob.png secondaries.png secondaries_gamma.png secondaries_electron.png deflection.png multiplescattering.png asymmetry.png interpolation_fix.png cutdependence.png statemachine.png multiplescattering_sketch.png longprof.png xmax.png chargeexcess.png lateralprof.png lateral_energydeposition.png radiodata_100.png cherenkov.png lpmeffect.png secondaries_deflection.png restricted_energy_range.png)
+OBJS := $(addprefix $(OBJDIR)/,overview.png measureing_process.png shower.png dndx_divergence.png continuous_losses.png particle_rates.png steplength_limitation.png stackedrates.png track.png acceptance_prob.png secondaries.png secondaries_gamma.png secondaries_electron.png deflection.png multiplescattering.png asymmetry.png interpolation_fix.png cutdependence.png statemachine.png multiplescattering_sketch.png longprof.png xmax.png chargeexcess.png lateralprof.png lateral_energydeposition.png radiodata_100.png cherenkov.png lpmeffect.png secondaries_deflection.png restricted_energy_range.png propagation_step.png)
 
 TEX_CMD = latexmk \
 		  --pdf \
@@ -61,6 +61,9 @@ $(OBJDIR)/secondaries_deflection.pdf: secondaries_deflection.tex
 $(OBJDIR)/statemachine.pdf: statemachine.tex
 	$(TEX_CMD) $<
 
+$(OBJDIR)/propagation_step.pdf: propagation_step.tex
+	$(TEX_CMD) $<
+
 # $(OBJDIR)/overview.png: $(OBJDIR)/overview.pdf
 # 	convert -density 300 $< $@
 
@@ -92,6 +95,9 @@ $(OBJDIR)/shower.png: $(OBJDIR)/shower.pdf
 # 	convert -density 300 $< $@
 
 $(OBJDIR)/secondaries.png: $(OBJDIR)/secondaries.pdf
+	convert -density 300 -colorspace RGB $< $@
+
+$(OBJDIR)/propagation_step.png: $(OBJDIR)/propagation_step.pdf
 	convert -density 300 -colorspace RGB $< $@
 
 $(OBJDIR)/secondaries_deflection.png: $(OBJDIR)/secondaries_deflection.pdf

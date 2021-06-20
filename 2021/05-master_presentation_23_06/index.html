@@ -126,7 +126,7 @@
                                     \end{equation}
                                     There is also a chance to produce muons via electromagnetic processes like
                                     \begin{equation}
-                                    e^- + \ce{^N_ZA} \rightarrow e^- + \ce{^N_ZA} + \mu^+ + \mu^-
+                                    e^- + \ce{Z} \rightarrow e^- + \ce{Z} + \mu^+ + \mu^-
                                     \end{equation}
                                     or inelastic interactions with the nuclei.
                                     </p>
@@ -166,26 +166,93 @@
                 <section>
                     <div class="wrap size-60">
                         <h2><strong>How can PROPOSAL help to generate EM Cascades?</strong></h2>
+                        <p class="text-intro">
+                        Initially the development was not started with the idea to be an electromagnetic interaction model in CORSIKA.
+                        In the course of the development it offers the possibility to make the interactions of leptonic and photonic interactions available for a variety of users.
+                        </p>
+
+                        <h3>Development flow</h3>
+                        <p>
+                        In recent years, more and more experiments have been using PROPOSAL such as IceCube, Pico, RNO-O or NuMuRadioMC.
+This requires more and more precise models and a high degree of flexibility.
+                        </p>
+                    </div>
+                    <div class="wrap size-75">
                         <ul class="flexblock steps">
                             <li>
-                                <h2>initial</h2>
-                                <p>Entwickelt zum propagieren von Muonen durch ein homogenes Medium.  </p>
+                                <h4>Initial idea (2004)</h4>
+                                <p class="text-quote">
+                                An accurate simulation of the propagation of muons through large amounts of matter is needed forthe analysis of data produced by muon/neutrino undergroundexperiments.</p>
+                                <p>
+                                <cite>
+                                    <a href="https://arxiv.org/abs/hep-ph/0407075v3" target="_blank">@D.Chirkin</a>
+                                </cite>
+                                </p>
                             </li>
                             <li>
                                 <div class="process step-2"> </div>
-                                <h2>upgrade</h2>
-                                <p>Erweiterungen Jean Marco.
+                                <h4>Advancement to PROPOSAL (2013)</h4>
+                                <p>Restructuring in the programming language C++.
+                                Adding the possibility to propagate electrons
+                                through homogeneous media.
                                 </p>
+                                <cite>
+                                    <a href="http://dx.doi.org/10.17877/DE290R-13191"
+                                       target="_blank">J.-H. Köhne</a>
+                                </cite>
                             </li>
                             <li>
                                 <div class="process step-3"> </div>
-                                <h2>current status</h2>
-                                <p>Diese Arbeit.
+                                <h4>Improvement / impelemtation of
+                                    cross sections (2018/2020)</h4>
+                                <p>
+                                Improvements of cross sections of high-energy
+                                muons are calculated.
                                 </p>
+                                <cite>
+                                    <a href="http://dx.doi.org/10.17877/DE290R-19810"
+                                       target="_blank">A. Sandrock</a>
+                                </cite>
+                                <p>
+                                Cross sections necessary for photon and electron
+                                propagation are added.
+                                </p>
+                                <cite>
+                                    <a
+                                        href="https://nextcloud.e5.physik.tu-dortmund.de/index.php/apps/files/?dir=/Abschlussarbeiten/Masterarbeiten&openfile=205541"
+                                        target="_blank">J.-M. Alameddine</a>
+                                </cite>
+                            </li>
+                            <li>
+                                <div class="process step-4"> </div>
+                                <h4>Library solveing sub-tasks of
+                                    cascade simulation (2021)</h4>
+                                <p>
+                                Modularization of the calculations,
+                                so that can be utilized by external libraries.
+                                Use of the library to calculate the electromagnetic interactions
+                                and losses in the CORSIKA8 simulation.
+                                </p>
+                                <cite>
+                                    <a
+                                        href="https://nextcloud.e5.physik.tu-dortmund.de/index.php/apps/files/?dir=/Abschlussarbeiten/Masterarbeiten&openfile=443719"
+                                        target="_blank">M. Sackel</a>
+                                </cite>
                             </li>
                         </ul>
+                    </div>
+                    <div class="wrap size-60">
+                        <hr>
+                        <h3>Installation process</h3>
+                        <p>
+                        For the use of a library in different application cases
+                        it is advantageous to use a package manager.
+                        For this purpose, the possibility was created to create
+                        packages that can be used by other users.
+                        Through versioning, functions can be added more
+                        transparently and simulation situations can be recreated.
+                        </p>
 
-                        <h3>installation process</h3>
                         <img class="aligncenter size-50" src="images/conancenter.png" alt="">
                     </div>
                 </section>
@@ -231,13 +298,19 @@
                 <section>
                     <div class="wrap size-60">
                         <h2><strong>Continuous losses</strong></h2>
+
+                        <img class="aligncenter size-50" src="LaTeX/build/propagation_step.png" alt="" style="max-width:250pt">
+
+                        \begin{equation}
+                        \sum_\mathrm{inter} \frac{\mathrm{d}E_\mathrm{inter}}{\mathrm{d}X} = -f(E)
+                        \end{equation}
                         <img class="aligncenter size-50" src="LaTeX/build/continuous_losses.png" alt="">
                     </div>
 
                     \begin{equation}
-                        \int^{x_\mathrm{i}}_{x_\mathrm{f}} \rho(x)
-                        \mathrm{d}x = \int^{E_\mathrm{i}}_{E_\mathrm{f}}
-                        \frac{1}{f(E)} \, \mathrm{d}E
+                    \int^{x_\mathrm{i}}_{x_\mathrm{f}} \rho(x)
+                    \mathrm{d}x = \int^{E_\mathrm{i}}_{E_\mathrm{f}}
+                    \frac{1}{f(E)} \, \mathrm{d}E
                     \end{equation}
                 </section>
 
@@ -411,7 +484,7 @@
 
                         <hr>
                         <h3>cubic interpolation<a class="button zoomIn
-                                                             alignright" href="https://github.com/MaxSac/cubic_interpolation"> Have a look at GitHub </a>
+                                                                  alignright" href="https://github.com/MaxSac/cubic_interpolation"> Have a look at GitHub </a>
                         </h3>
                         <img class="aligncenter size-60" src="LaTeX/build/restricted_energy_range.png" alt="">
 
