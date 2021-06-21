@@ -18,6 +18,7 @@
                         <p class="text-intro">
                         Master thesis overview talk
                         </p>
+                        <p>23 June 2021</p>
                     </div>
 
                     <footer class="bg-white">
@@ -31,6 +32,68 @@
                             </p>
                         </div>
                     </footer>
+                </section>
+
+                <section class="slide current">
+                    <div class="wrap size-50">
+                        <h3>Table of contents </h3>
+                        <hr>
+                        <div class="toc">
+                            <ol>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span class="chapter">Why Simulation Matters?</span>
+                                        <span class="toc-page">03</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span class="chapter">Atomospheric cascades</span>
+                                        <span class="toc-page">05</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span class="chapter">
+                                            Cross section divergence problem and propagation principles
+                                        </span>
+                                        <span class="toc-page">08</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span class="chapter">Secondaries production</span>
+                                        <span class="toc-page">14</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span class="chapter">Effects on lateral distribution</span>
+                                        <span class="toc-page">15</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span class="chapter">Problem of first em showers and need of new interpolation routine</span>
+                                        <span class="toc-page">19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span class="chapter">Shower and simulation properties</span>
+                                        <span class="toc-page">20</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <span class="chapter">Outlook and summary</span>
+                                        <span class="toc-page">24</span>
+                                    </a>
+                                </li>
+
+                            </ol>
+                        </div>
+                    </div>
                 </section>
                 <!-- Slide 2 -->
                 <section class="alignleft">
@@ -71,7 +134,7 @@
                         the particle showers develop characteristic components of varying intensity.
                         </p>
                         <div class="aligncenter">
-                            <img src="./LaTeX/build/shower.png" alt=""/>
+                            <img src="./images/shower.png" alt=""/>
                         </div>
                         <p>
                         The shower regions can be subdevided into three
@@ -80,10 +143,11 @@
                         Shown are a proton-induced and an electron-induced shower
                         with an initial particle energy of $1\,\mathrm{PeV}$ using the most
                         complete model currently available in CORSIKA8.
-                        Die Schauer unterscheiden sich in der Anzahl an
-                        produzierten hadronen und muonen.
+                        The most obvious difference is the number of hadrons 
+                        and muons produced.
                         For electron or gamma induced showers,
-                        the loss by muons or hadronic particles is a subdominant process.
+                        the production of muons or hadronic particles is a 
+                        subdominant process.
                         It is currently missing in the em description and will be added in the near future.
                         Due to the higher radiation losses for em processes,
                         these are more compact and have a smaller deviation from
@@ -135,9 +199,26 @@
                             <li>
                                 <div>
                                     <h3>
-                                        <span>$\ce{^{4}_{2}He}$</span> hadronic
+                                        <span>$K/\pi$</span> hadronic
                                     </h3>
-                                    <p>Content is for demo purposes only. Minimum effort, amazing results.</p>
+                                    <p>
+                                    If a nuclei interacts it produces a hughe
+                                    number of mesons. 
+                                    The heavier mesons like the Kaon can decay
+                                    in lighter mesons like the pion.
+                                    \begin{equation}
+                                    K^+ \rightarrow \pi^+ + \pi^0
+                                    \end{equation}
+                                    The neutral pions subsequently generate an 
+                                    electromagnetic component.
+                                    \begin{equation}
+                                    \pi^0 \rightarrow \gamma +\gamma
+                                    \end{equation}
+                                    Leptonic decay occurs predominantly in muons due to helicity.
+                                    \begin{equation}
+                                    \pi^- \rightarrow \mu^- \bar{\nu}_\mu
+                                    \end{equation}
+                                    </p>
                                 </div>
                             </li>
                         </ul>
@@ -151,7 +232,7 @@
                         <div class="bg-white shadow">
                             <ul class="flexblock reasons">
                                 <li>
-                                    <h3>How does the Particle trajectory looks like?</h3>
+                                    <h3>How does the particle trajectory looks like?</h3>
                                     <p>Split into sub trajectories, describe physics on the sub trajectories</p>
                                 </li>
                                 <li>
@@ -259,36 +340,32 @@
                     <div class="wrap size-60">
                         <h2><strong>Cross-Section Divergence Problem</strong></h2>
                         <p class="text-intro">
-                        Interaktionen werde  in proposal in der Regel auf basis von differential cross-sections berechnet.
+                        Interactions in proposal are usually calculated on the basis of differential cross-sections.
                         The rates can be calculated by integration over the physical kinematic limits.
                         some of them diverge so that a threshold is necessary below which losses aren't handled continuously.
                         </p>
+
                         <p>
-                        Die vorliegenden Wirkungsquerschnitte in PROPOSAL sin in
-                        der Regel differentiell im relativen Energieverlustes
-                        $\nu$ parametriziert.
-                        Um die Rate eines wirkungsquerschnitts zu berechnen
-                        wird dieser von dem unteren unteren kinematischen limit bis zu
-                        oberen integriert.
-                        Um das mehrfache Integrieren zu verhindern koennen
-                        zwei dimensionale interpolanten verwendet werden in
-                        $(\nu, E)$.
+                        The available effective cross sections in PROPOSAL are usually differentially parameterised in the relative energy loss $\nu$.
+                        Rates are calculated by integration over the parametrization kinematic limits.
+                        To avoid multiple integrations, two dimensional interpolants can be used in $(\nu, E)$.
                         </p>
+
                         \begin{equation}
                         \sigma_\mathrm{tot} = \int_{\nu_{\min}}^{\nu_{\max}} \frac{\mathrm{d}\sigma(E)}{\mathrm{d} \nu} \, \mathrm{d}\nu
                         \end{equation}
+
                         <p>
-                        Manche der elektromagnetischen Wirkungsquerschnitte divergieren fuer kleine relative Energieuebertraege $\nu \rightarrow \nu_{\min}$.
-                        Ein Beispiel ist der Bremsstrahlungswirkungsquerschnitt
-                        welcher unten Abgebildet ist.
+                        Some of the electromagnetic cross sections diverge for small relative energy transfers $\nu \rightarrow \nu_{\min}$.
+                        An example is the bremsstrahlung radiation cross section which is shown below.
                         </p>
-                        <img src="LaTeX/build/dndx_divergence.png" alt="" class="aligncenter size-50"/>
-                        <p> Zweckmaessiger weise wird ein relativer
-                        Verlustschnitt $\nu_\mathrm{cut}(E)$ eingefuehrt
-                        unterhalb dem prozesse nicht mehr stoschastisch
-                        betrachtet werden.
-                        Sie lassen sich jedoch noch als kontinuierlicher
-                        Energieverlust beruecksichtigen.
+
+                        <img src="images/dndx_divergence.png" alt=""
+                        class="aligncenter size-70"/>
+
+                        <p> 
+                        Purposefully, a relative loss cut $\nu_\mathrm{cut}(E)$ is introduced below which processes are no longer considered stoschastically.
+                        However, they can still be considered as continuous energy loss.
                         </p>
                     </div>
                 </section>
@@ -304,32 +381,22 @@
                         </p>
 
                         <p>
-                        Um den Energie zu berechnen die ein Teilchen besitzt
-                        nachdem es eine Strecke von dem punkt $x_i$ zu dem punkt
-                        $x_j$
-                        zuruecklegt wird die Trajektorie in infinitesimal kleine
-                        Stuecke aufgeteilt.
+                        To calculate the energy loss that a particle has after it travels a distance from the point $x_i$ to the point $x_j$, 
+                        the trajectory is divided into infinitesimally small pieces.
                         </p>
 
-                        <img class="aligncenter size-50" src="LaTeX/build/propagation_step.png" alt="" style="max-width:250pt">
+                        <img class="aligncenter size-50" src="images/propagation_step.png" alt="" >
 
                         <p>
-                        Ist der gemittelte Energieverlust pro infinitesimal Wegstrecke bekannt,
-                        kann anhand des wissens der Teilchenenergie entlang der Trajektorie,
-                        der Energieverlust berechnet werden.
-                        In der Abbildung ist der Energieverlust fuer die drei
-                        teilchentypen dargestellt wenn sie ausschliesslich ueber
-                        den kontinuierlichen Prozess ihre Energie verlieren
-                        dargestellt.
+                        If the average energy loss per infinitesimal distance is known, the energy loss can be calculated based on the knowledge of the particle energy along the trajectory.
+                        The figure shows the energy loss for the three types of particles when they lose their energy exclusively via the continuous process.
                         </p>
 
-                        <img class="aligncenter size-50" src="LaTeX/build/continuous_losses.png" alt="">
+                        <img class="aligncenter size-70" src="images/continuous_losses.png" alt="">
 
                         <p>
-                        Zweckmaessiger weise werden die kontinuierlichen
-                        Prozesse zu einem kontinuierlichen Verlust zusammengefasst,
-                        da keine Aussage getroffen werden kann ueber welchen
-                        Prozess der Verlust stattgefunden hat.
+                        The continuous processes are combined into one continuous loss, 
+                        as no statement can be made about which process the loss occurred.
                         </p>
 
                         \begin{equation}
@@ -337,10 +404,9 @@
                         \end{equation}
 
                         <p>
-                        Durch suche des oberen integrationslimits kann fuer ein
-                        bekanntes dichte profile $\rho(x)$ sowohl die Energie
-                        nach einer zurueckgelegten distanz, als auch die Distanz
-                        nach einem gegeben Energieverlustes bestimmt werden.
+                        By searching for the upper integration limit, 
+                        for a known density profile $\rho(x)$ both the energy after a distance covered 
+                        and the distance after a given energy loss can be determined.
                         </p>
 
                         \begin{equation}
@@ -357,22 +423,15 @@
                         <h2><strong>Mean free path length</strong></h2>
 
                         <p class="text-intro">
-                        Durch die Wahl der Energie ab welcher stochastische
-                        Verluste berechnet werden sollen aendert sich die Rate
-                        fuer die interaktionen.
-                        Dies fuehrt zu anderen Schrittweiten und beeinflusst massgeblich neben
-                        der untere Grenze des detektierbaren spektrums die Laufzeit des Programms.
+                        By choosing the energy from which losses are treated stochastically, the rate for the interactions changes.
+                        This leads to different step sizes and significantly influences the runtime of the programme in addition to the lower limit of the detectable spectrum.
                         </p>
 
-                        <img class="aligncenter size-50" src="LaTeX/build/particle_rates.png" alt="">
+                        <img class="aligncenter size-70" src="images/particle_rates.png" alt="">
 
                         <p>
-                        fuer verschiedene stochastische Energie schnitte aendert
-                        sich das Verhaeltniss der Schrittweiten und des
-                        Energieverlustes pro Energie.
-                        Dies fuehrt dazu, dass durch entsprechende Schwellwert
-                        wahl effekte die zuvor subdominant waren zu dominaten
-                        Prozessen werden.
+                        For different stochastic energy cuts, the ratio of step sizes and energy loss per energy changes.
+                        This leads to the fact that, by choosing the appropriate threshold, effects that were previously sub-dominant become dominant processes.
                         </p>
                     </div>
                 </section>
@@ -382,12 +441,12 @@
                         <h2><strong>Stacked Rates</strong></h2>
 
                         <p class="text-intro">
-                        Welche groesse besitzt der stochastische Energieverlust zu dem gesampelten Ort?
+                        What is the size and the interaction type of the stochastic loss to the sampled location?
                         </p>
 
                         <h3>Sample process</h3>
                     </div>
-                    <div class="wrap size-70">
+                    <div class="wrap size-75">
                         <ul class="flexblock steps">
                             <li>
                                 <h4>rates per target and interaction</h4>
@@ -421,17 +480,16 @@
                         <h3>Sample electron loss</h3>
 
                         <p>
-                        Beispielhafte bestimmung der groesse eines
-                        Elektronverlustes bei einer Erngie von XXX MeV und einem
-                        stochastizitaets Schwellwert von XXX MeV.
+                        Example determination of the magnitude of a stochastic
+                        electron loss at an energy of $5\,\mathrm{TeV}$ 
+                        and a stochastic threshold of $10\,\mathrm{GeV}$.
                         </p>
 
-                        <img class="aligncenter size-50" src="LaTeX/build/stackedrates.png" alt="">
+                        <img class="aligncenter size-70" src="images/stackedrates.png" alt="">
 
-                        <p>Basierend aus dem wissen der Teilchenergie und der
-                        Verlusttypen sowie die Verlustenergie kann zu einem
-                        beliebigen Zeitupunkt die entsprechenden erzeugten
-                        Sekundaerteilchen erzeugt werden.</p>
+                        <p>
+                        Based on the knowledge of the particle energy and the loss types as well as the loss energy, the corresponding generated secondary particles can be produced at an arbitrary time point.
+                        </p>
                     </div>
                 </section>
 
@@ -447,7 +505,7 @@
                         the current PROPSOAL propagator can be assembled.
                         </p>
 
-                        <img class="aligncenter size-50" src="LaTeX/build/statemachine.png" alt="">
+                        <img class="aligncenter size-70" src="images/statemachine.png" alt="">
 
                         <p>
                         One propagation step of the propagation loop performed
@@ -470,7 +528,7 @@
                         processes can be taken into account as a correction.
                         </p>
 
-                        <img class="aligncenter size-50" src="LaTeX/build/track.png" alt="">
+                        <img class="aligncenter size-70" src="images/track.png" alt="">
 
                         <p>
                         Subsequently, the interaction rates $R$ are calculated
@@ -562,7 +620,7 @@
                         20 percent  of the primary energy is lost (dashed lines from top to bottom).
                         </p>
 
-                        <img class="aligncenter size-50" src="LaTeX/build/acceptance_prob.png" alt="">
+                        <img class="aligncenter size-70" src="images/acceptance_prob.png" alt="">
 
                         <p>
                         For energies going towards the stochastic energy threshold, the acceptance probability decreases, since the change of the mean free path is large.
@@ -579,7 +637,7 @@
                         than necessary for the description of the stochastic process (solid line).
                         </p>
 
-                        <img class="aligncenter size-50" src="LaTeX/build/steplength_limitation.png" alt="">
+                        <img class="aligncenter size-70" src="images/steplength_limitation.png" alt="">
                     </div>
                 </section>
 
@@ -592,7 +650,7 @@
                         from the state before the stochastic loss and the properties of the stochastic loss.
                         </p>
 
-                        <img class="aligncenter size-30" src="LaTeX/build/secondaries.png" alt="" style="max-width:200pt;">
+                        <img class="aligncenter size-40" src="images/secondaries.png" alt="">
 
                         <p>
                         To calculate the energy distribution of the generated particles,
@@ -625,13 +683,13 @@
                             <div class="column">
                                 <h4><i> Gamma produced secondaries:</i></h4>
                                 <div class="aligncenter size-85">
-                                    <img src="./LaTeX/build/secondaries_gamma.png" alt="">
+                                    <img src="./images/secondaries_gamma.png" alt="">
                                 </div>
                             </div>
                             <div class="column">
                                 <h4><i>Electron produced secondaries</i></h4>
                                 <div class="aligncenter size-85">
-                                    <img src="./LaTeX/build/secondaries_electron.png" alt="">
+                                    <img src="./images/secondaries_electron.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -655,7 +713,7 @@
                         </p>
 
                         <img class="aligncenter"
-                             src="LaTeX/build/secondaries_deflection.png" alt=""
+                             src="images/secondaries_deflection.png" alt=""
                                                                           style="max-width:400pt">
                         <ul class="flexblock plans blink">
                             <li>
@@ -696,7 +754,7 @@
                         continuous step.
                         </p>
 
-                        <img class="aligncenter size-60" src="LaTeX/build/multiplescattering_sketch.png" alt="">
+                        <img class="aligncenter size-70" src="images/multiplescattering_sketch.png" alt="">
 
                         <p>
                         The deflections are sampled using a Gaussian distribution
@@ -736,7 +794,7 @@
                         determined in relation to the continuous losses.
                         </p>
 
-                        <img class="aligncenter size-60" src="LaTeX/build/multiplescattering.png" alt="">
+                        <img class="aligncenter size-70" src="images/multiplescattering.png" alt="">
                     </div>
                 </section>
 
@@ -762,7 +820,7 @@
                         the stochastic deflection provides a significant
                         contribution to the Coulomb scattering processes.
                         </p>
-                        <img class="aligncenter size-60" src="LaTeX/build/deflection.png" alt="">
+                        <img class="aligncenter size-70" src="images/deflection.png" alt="">
                     </div>
                 </section>
 
@@ -787,7 +845,7 @@
                         mentioned in the EGS manual.
                         </p>
 
-                        <img class="aligncenter size-60" src="LaTeX/build/asymmetry.png" alt="">
+                        <img class="aligncenter size-70" src="images/asymmetry.png" alt="">
 
                         <p>
                         Even if they do not match for low energy,
@@ -822,7 +880,7 @@
                         this leads to the generation of negative displacements.
                         These are unphysical and must be avoided.
                         </p>
-                        <img class="aligncenter size-60" src="LaTeX/build/interpolation_fix.png" alt="">
+                        <img class="aligncenter size-70" src="images/interpolation_fix.png" alt="">
 
                         <hr>
                         <h3>Cubic Interpolation<a class="button zoomIn
@@ -845,11 +903,12 @@
                         intervall region.
                         </p>
 
-                        <img class="aligncenter size-60" src="LaTeX/build/restricted_energy_range.png" alt="">
+                        <img class="aligncenter size-70" src="images/restricted_energy_range.png" alt="">
 
                         <p>
                         To avoid intervallic nesting, points of support are distributed along a node function.
                         </p>
+
                         \begin{equation}
                         f(x) = f(T^{-1}(t))
                         \end{equation}
@@ -861,11 +920,10 @@
                         In general, any other distribution can be realized as
                         long as it is invertible.
                         </p>
+
                         \begin{equation}
                         T_{\exp}(x) = \frac{\log(x/\mathrm{low} +1) - \log(2)}{\mathrm{stepsize}}
                         \end{equation}
-
-
 
                     </div>
                 </section>
@@ -924,7 +982,7 @@
                         </p>
 
 
-                        <img class="aligncenter size-50" src="LaTeX/build/cutdependence.png" alt="">
+                        <img class="aligncenter size-70" src="images/cutdependence.png" alt="">
                     </div>
                 </section>
 
@@ -941,7 +999,7 @@
                         and the continuous losses of the particles look reasonable.
                         </p>
 
-                        <img class="aligncenter size-50" src="LaTeX/build/longprof.png" alt="">
+                        <img class="aligncenter size-70" src="images/longprof.png" alt="">
 
                         <h3>charge excess</h3>
 
@@ -950,8 +1008,8 @@
                         be extracted, such as the charge excess.
                         </p>
 
-                        <img class="aligncenter size-50"
-                             src="LaTeX/build/chargeexcess.png" alt="">
+                        <img class="aligncenter size-70"
+                             src="images/chargeexcess.png" alt="">
 
                         <h3>$X_{\max}$ distribution</h3>
 
@@ -962,7 +1020,7 @@
                         experiments.
                         </p>
 
-                        <img class="aligncenter size-50" src="LaTeX/build/xmax.png" alt="">
+                        <img class="aligncenter size-70" src="images/xmax.png" alt="">
 
 
                     </div>
@@ -976,14 +1034,14 @@
                         By slicing along an observation plane,
                         the deflection processes of the particles can be studied.
                         </p>
-                        <img class="aligncenter size-50" src="LaTeX/build/lateralprof.png" alt="">
+                        <img class="aligncenter size-70" src="images/lateralprof.png" alt="">
 
                         <h3>energy deposition</h3>
 
                         <p>
                         The radius in which 90 percent of the particle energy is deposited is known as the Molière radius.
                         </p>
-                        <img class="aligncenter size-50" src="LaTeX/build/lateral_energydeposition.png" alt="">
+                        <img class="aligncenter size-70" src="images/lateral_energydeposition.png" alt="">
 
                     </div>
                 </section>
@@ -995,12 +1053,12 @@
 
 
                         <h3>radio</h3>
-                        <img class="aligncenter size-50"
-                             src="LaTeX/build/radiodata_100.png" alt="">
+                        <img class="aligncenter size-70"
+                             src="images/radiodata_100.png" alt="">
 
                         <h3>cherenkov</h3>
-                        <img class="aligncenter size-50"
-                             src="LaTeX/build/cherenkov.png" alt=""/>
+                        <img class="aligncenter size-70"
+                             src="images/cherenkov.png" alt=""/>
                     </div>
                 </section>
 
@@ -1009,7 +1067,7 @@
                         <h2> <strong> Outlook </strong> </h2>
 
                         <h3>Landau–Pomeranchuk–Migdal effect</h3>
-                        <img class="aligncenter size-50" src="LaTeX/build/lpmeffect.png" alt="">
+                        <img class="aligncenter size-70" src="images/lpmeffect.png" alt="">
 
                         <h3>photonuclear and mupairproduction</h3>
 
