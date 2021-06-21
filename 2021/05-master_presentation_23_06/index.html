@@ -566,7 +566,7 @@
 
                         <p>
                         For energies going towards the stochastic energy threshold, the acceptance probability decreases, since the change of the mean free path is large.
-The allowable step size through the maximum continuous is the dominant effect at low particle energies, suppressing the effect.
+                        The allowable step size through the maximum continuous is the dominant effect at low particle energies, suppressing the effect.
                         </p>
 
                         <hr>
@@ -688,12 +688,28 @@ The allowable step size through the maximum continuous is the dominant effect at
                     <div class="wrap size-60">
                         <h3>Multiple Scattering</h3>
 
+                        <p class="text-intro">
+                        A charged particle passing a distance $x$ undergoes a
+                        essemble of inelastic Coloumb scattering.
+                        The charged particle is deflected from its original
+                        trajectory and has a different final direction after the
+                        continuous step.
+                        </p>
+
                         <img class="aligncenter size-60" src="LaTeX/build/multiplescattering_sketch.png" alt="">
 
+                        <p>
+                        The deflections are sampled using a Gaussian distribution
+                        determined by the characteristic width $\theta_0$.
+                        When calculating the deflection angle, the energy loss
+                        along the trajectory can be taken into account.
+                        This leads to systematically larger deflection angles.
+                        </p>
                     </div>
                     <div class="wrap size-90">
                         <ul class="flexblock features">
                             <li>
+                                <h4>Highland approximation</h4>
                                 \begin{equation}
                                 \theta_0 = \frac{13.6 \, \mathrm{MeV}}{\beta c p }
                                 \sqrt{\frac{X}{X_0}} \left[ 1+ 0.088 \log_{10}
@@ -701,6 +717,7 @@ The allowable step size through the maximum continuous is the dominant effect at
                                 \end{equation}
                             </li>
                             <li>
+                                <h4>Highland integral</h4>
                                 \begin{equation}
                                 \theta_0 = 13.6 \, \mathrm{MeV}
                                 \sqrt{\frac{X}{X_0}} \left[ 1+ 0.088 \log_{10}
@@ -713,8 +730,13 @@ The allowable step size through the maximum continuous is the dominant effect at
                     </div>
 
                     <div class="wrap size-60">
-                        <img class="aligncenter size-60" src="LaTeX/build/multiplescattering.png" alt="">
+                        <p>
+                        Five different initial electron energies were determined.
+                        For an energy cut of 10 MeV the deflection angles were
+                        determined in relation to the continuous losses.
+                        </p>
 
+                        <img class="aligncenter size-60" src="LaTeX/build/multiplescattering.png" alt="">
                     </div>
                 </section>
 
@@ -722,6 +744,24 @@ The allowable step size through the maximum continuous is the dominant effect at
                     <div class="wrap size-60">
                         <h3>Stochastic Deflection</h3>
 
+                        <p class="text-intro">
+                        Occurs a large losses there is a realistic chance
+                        that the primary particle is deflected due to the interaction.
+                        For this purpose, the infrastructure was created to
+                        realize stochastic deflections in this work and
+                        parameterizations were added in the work of P. Gutjahr.
+                        </p>
+
+                        <p>
+                        To study the influence of stochastic deflections, $10^4$
+                        electron tracks with an initial Energy of
+                        $1\,\mathrm{GeV}$ are produced.
+                        The deflections were simulated and the losses are
+                        projected onto an observation plane on the Earth's surface.
+                        For particles close to the shower cores,
+                        the stochastic deflection provides a significant
+                        contribution to the Coulomb scattering processes.
+                        </p>
                         <img class="aligncenter size-60" src="LaTeX/build/deflection.png" alt="">
                     </div>
                 </section>
@@ -730,7 +770,31 @@ The allowable step size through the maximum continuous is the dominant effect at
                     <div class="wrap size-60">
                         <h3>Secondaries Angular</h3>
 
+                        <p class="text-intro">
+                        The secondary particles that are created in a stochastic
+                        loss have a different angle than the particle that
+                        experiences the loss.
+                        For low-energy particles whose range is limited,
+                        it is impractical to sample the exact deflection angle
+                        if this is computationally intensive.
+                        </p>
+
+                        <p>
+                        Shown are the emition angular of the electron sampled
+                        from a pair production of a photon.
+                        Compared are the sampled Angular from the Tsai-parametrization
+                        and the approximation $\theta = m_\mathrm{e} / E_\gamma$
+                        mentioned in the EGS manual.
+                        </p>
+
                         <img class="aligncenter size-60" src="LaTeX/build/asymmetry.png" alt="">
+
+                        <p>
+                        Even if they do not match for low energy,
+                        there are processes for low energetic electrons which
+                        influence the directional deflections more significantly,
+                        such as multiple scattering or magnetic field deflections.
+                        </p>
                     </div>
                 </section>
 
@@ -738,18 +802,65 @@ The allowable step size through the maximum continuous is the dominant effect at
                     <div class="wrap size-60">
                         <h2><strong>First Electromagnetic Shower</strong></h2>
 
+                        <p class="text-intro">
+                        The first attempts to create an electromagnetic shower all failed.
+                        This is due to a discontinuity in the interpolated functions
+                        which produce strong oscillations.
+                        These have so far been a subdominant effect,
+                        since the choice of the stochastic energy cut changes
+                        the relative relationship of the continuous losses of the
+                        different interaction types to each other.
+                        </p>
+
+                        <p>
+                        Shown are the relative deviations of the old
+                        interpolation method in solid lines and the new dashed
+                        lines to the integrated values.
+                        In the case that an energy cut is chosen where the
+                        oscillations make a significant contribution in solving
+                        the track integral,
+                        this leads to the generation of negative displacements.
+                        These are unphysical and must be avoided.
+                        </p>
                         <img class="aligncenter size-60" src="LaTeX/build/interpolation_fix.png" alt="">
 
                         <hr>
-                        <h3>cubic interpolation<a class="button zoomIn
+                        <h3>Cubic Interpolation<a class="button zoomIn
                                                                       alignright" href="https://github.com/MaxSac/cubic_interpolation"> Have a look at GitHub </a>
                         </h3>
+
+                        <p>
+                        Using cubic splines ensures that the function is
+                        differentiable at least once on the definition interval.
+                        The interpolation is restricted to an interval on which
+                        the function is strictly monotonic.
+                        The nodes are distributed according to a known invertible
+                        distribution, so no interval nesting needs to be used.
+                        </p>
+
+                        <p>
+                        By approximating the lower interpolation limit avoids
+                        non-physical oscillations where no rate exists, by the
+                        cost of a small energy uncertainty of the lower
+                        intervall region.
+                        </p>
+
                         <img class="aligncenter size-60" src="LaTeX/build/restricted_energy_range.png" alt="">
 
+                        <p>
+                        To avoid intervallic nesting, points of support are distributed along a node function.
+                        </p>
                         \begin{equation}
                         f(x) = f(T^{-1}(t))
                         \end{equation}
 
+                        <p>
+                        For functions that are to be interpolated over several
+                        orders of magnitude, it is useful to use exponentially
+                        distributed substitutions.
+                        In general, any other distribution can be realized as
+                        long as it is invertible.
+                        </p>
                         \begin{equation}
                         T_{\exp}(x) = \frac{\log(x/\mathrm{low} +1) - \log(2)}{\mathrm{stepsize}}
                         \end{equation}
@@ -763,33 +874,56 @@ The allowable step size through the maximum continuous is the dominant effect at
                     <div class="wrap size-60">
                         <h2><strong>Cut Dependence</strong></h2>
 
-                        <h3>Runtime</h3>
-                        <div class="wrap size-45">
-                            <ul class="flexblock metrics">
+                        <p class="text-intro">
+                        The time it takes to create a shower depends on the stochasticity cut.
+                        This has a direct influence on the step size and the number of secondary particles produced.
+                        </p>
+
+                        <h3>Runtime for different stochastic energy threshold with same particle threshold from $20\,\mathrm{MeV}$</h3>
+                        <p>
+                        Listed are the runtimes to simulate a shower with
+                        different stochastic energy cuts.
+                        Higher stochastic thresholds cause larger mean free paths, leading to larger step sizes for the energy ranges where the stochastic step size is smaller than the maximum continuous loss.
+                        Furthermore, fewer secondary particles are produced which are instantaneously removed from the particle threshold.
+                        </p>
+                        <div class="wrap size-65">
+                            <ul class="flexblock metrics border">
                                 <li>
                                     <a href="" >
                                         <!-- <h3> <strong> 5 MeV</strong> </h3> -->
-                                        <h3>$5\,\mathrm{MeV}$ </h3>
-                                        <span>$5.1\,\pm\,1.5\,\mathrm{s}$</span>
+                                        <h4>$5\,\mathrm{MeV}$ </h4>
+                                        <span>$5.1\,\mathrm{s}$</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="" >
-                                        <span>$2.6 \, \pm\,1.4\,\mathrm{s}$ </span>
-                                        <h3> $10\,\mathrm{MeV}$ </h3>
+                                        <h4> $10\,\mathrm{MeV}$ </h4>
+                                        <span>$2.6 \,\mathrm{s}$ </span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="" >
-                                        <h3>$20\,\mathrm{MeV}$</h3>
-                                        <span>$1.7\,\pm\,0.5\,\mathrm{s}$</span>
+                                        <h4>$20\,\mathrm{MeV}$</h4>
+                                        <span>$1.7\,\mathrm{s}$</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <hr>
 
-                        <h3>Spectrum</h3>
+                        <h3>Spectrum of an $10\,\mathrm{TeV}$ electron initiated
+                            em shower reaching an observation plane of
+                            $4.1\,\mathrm{km}$.</h3>
+
+                        <p>
+                        The choice of the stochastic energy cut does not seem to
+                        have any effect on the shape of the spectrum.
+                        There are fluctuations in the spectrum due to the variation
+                        of the $X_{\max}$ distribution, which is very sensitive
+                        to where the first large energy transfer occurs.
+                        </p>
+
+
                         <img class="aligncenter size-50" src="LaTeX/build/cutdependence.png" alt="">
                     </div>
                 </section>
@@ -797,18 +931,39 @@ The allowable step size through the maximum continuous is the dominant effect at
 
                 <section>
                     <div class="wrap size-60">
-                        <h2><strong>longitudinal profile</strong></h2>
+                        <h2><strong>Longitudinal Profile</strong></h2>
+
+                        <p class="text-intro">
+                        For study purposes, $50$ inital $10\,\mathrm{TeV}$ electron showers were simulated.
+                        The $68\,\%$-quantiles are plotted as error tube and bar and not the
+                        error on the mean value.
+                        The lateral profiles can be used to check whether the production mechanisms
+                        and the continuous losses of the particles look reasonable.
+                        </p>
 
                         <img class="aligncenter size-50" src="LaTeX/build/longprof.png" alt="">
 
-                        <h3>$X_{\max}$ distribution</h3>
+                        <h3>charge excess</h3>
 
-                        <img class="aligncenter size-50" src="LaTeX/build/xmax.png" alt="">
-
-                        <h3>askarian effect</h3>
+                        <p>
+                        Based on the lateral profile, physical measurements can
+                        be extracted, such as the charge excess.
+                        </p>
 
                         <img class="aligncenter size-50"
                              src="LaTeX/build/chargeexcess.png" alt="">
+
+                        <h3>$X_{\max}$ distribution</h3>
+
+                        <p>
+                        By varying the initial particle energy,
+                        the $X_{\max}$ distribution can be fitted.
+                        This is a measurement which is relevant for a variety of
+                        experiments.
+                        </p>
+
+                        <img class="aligncenter size-50" src="LaTeX/build/xmax.png" alt="">
+
 
                     </div>
                 </section>
@@ -816,10 +971,18 @@ The allowable step size through the maximum continuous is the dominant effect at
                 <section>
                     <div class="wrap size-60">
 
-                        <h2><strong>lateral profile</strong></h2>
+                        <h2><strong>Lateral Profile</strong></h2>
+                        <p class="text-intro">
+                        By slicing along an observation plane,
+                        the deflection processes of the particles can be studied.
+                        </p>
                         <img class="aligncenter size-50" src="LaTeX/build/lateralprof.png" alt="">
 
-                        <h3>energy depo</h3>
+                        <h3>energy deposition</h3>
+
+                        <p>
+                        The radius in which 90 percent of the particle energy is deposited is known as the Molière radius.
+                        </p>
                         <img class="aligncenter size-50" src="LaTeX/build/lateral_energydeposition.png" alt="">
 
                     </div>
