@@ -129,8 +129,8 @@
                     <div class="wrap size-60">
                         <h2><strong>Atmospheric cascades</strong></h2>
                         <p class="text-intro">
-                        If a particle hits the atmosphere, it partitioned its
-                        energy due particle losses into the production of secondary particles.
+                        If a particle hits the atmosphere, it partitions its
+                        energy due to particle losses into the production of secondary particles.
                         Depending on the initial particle type,
                         the particle showers develop characteristic components of varying intensity.
                         </p>
@@ -205,7 +205,7 @@
                                         <span>$K/\pi$</span> hadronic
                                     </h3>
                                     <p>
-                                    If a nucleus interacts it produces a hughe
+                                    If a nucleus interacts it produces a huge
                                     number of mesons.
                                     The heavier mesons like the Kaon can decay
                                     in lighter mesons like the pion.
@@ -231,7 +231,7 @@
                 <section>
                     <div class="wrap size-50">
                         <h2><strong>Electromagnetic cascades</strong></h2>
-                        <p class="text-intro">Tasks which has to be solved to
+                        <p class="text-intro">Tasks which have to be solved to
                         produce an electromagnetic cascade</p>
                         <div class="bg-white shadow">
                             <ul class="flexblock reasons">
@@ -370,7 +370,8 @@
 
                         <p>
                         Purposefully, a relative loss cut $\nu_\mathrm{cut}(E)$ is introduced below which processes are no longer considered stochastically.
-                        However, they can still be considered as continuous energy loss.
+                        However, they can still be considered as continuous
+                        energy losses.
                         </p>
                     </div>
                 </section>
@@ -379,8 +380,8 @@
                     <div class="wrap size-60">
                         <h2><strong>Continuous losses</strong></h2>
                         <p class="text-intro">
-                        A particle which travels a distance through a media losses
-                        energy due different interaction processes.
+                        A particle which travels a distance through a media loses
+                        energy due to different interaction processes.
                         Below an energy threshold, it is not feasible to stochastically resolve all losses.
                         Instead, they are combined into an averaged ensemble.
                         </p>
@@ -436,7 +437,7 @@
 
                         <p>
                         For different stochastic energy cuts ($1\,\mathrm{MeV}$
-                        solid lines and $20\,\mathrm{MeV}$ dashed line), the
+                        solid lines and $20\,\mathrm{MeV}$ dashed lines), the
                         size of step length and continuous energy loss changes.
                         <!-- This leads to the fact that, by choosing the appropriate threshold, -->
                         <!-- effects that were previously sub-dominant become dominant processes. -->
@@ -459,8 +460,8 @@
                             <li>
                                 <h4>rates per target and interaction</h4>
                                 <p>
-                                Calculates and store the interaction rates for each possible target.
-                                The interaction are represent by different colors and the targets by different opacities.
+                                Calculates and stores the interaction rates for each possible target.
+                                The interaction are represented by different colors and the targets by different opacities.
                                 </p>
                             </li>
                             <li>
@@ -472,12 +473,13 @@
                             <li>
                                 <div class="process step-3"></div>
                                 <h4>search target and interaction</h4>
-                                Check which intervall of the interaction target tuple correspond to the sampled rate.
+                                Check which interval of the interaction target
+                                tuple corresponds to the sampled rate.
                             </li>
                             <li>
                                 <div class="process step-4"></div>
                                 <h4>determine loss to rate</h4>
-                                Search the upper limit for the choosen tuple.
+                                Search the upper limit for the chosen tuple.
                                 \begin{equation}
                                 \sigma_\text{loss} = \int_{\nu_\mathrm{cut}}^{\nu_\mathrm{loss}} \frac{\mathrm{d}\sigma(E)}{\mathrm{d}\nu} \, \mathrm{d} \nu
                                 \end{equation}
@@ -506,7 +508,7 @@
                     <div class="wrap size-60">
                         <h2><strong>How is it all connected?</strong></h2>
                         <p class="text-intro">
-                        The physical problems solved on the basis of different modules.
+                        The physical problems are solved on the basis of different modules.
                         Different problems can be solved by combining them.
                         On the basis of the same modules on which the
                         electromagnetic shower calculations for CORSIKA8 are based,
@@ -516,9 +518,9 @@
                         <img class="aligncenter size-70" src="images/statemachine.png" alt="">
 
                         <p>
-                        One propagation step of the propagation loop performed
-                        by the PROPOSAL propagator approximates the task area
-                        covered by the em module in CORSIKA.
+                        <!-- One propagation step of the propagation loop performed -->
+                        <!-- by the PROPOSAL propagator approximates the task area -->
+                        <!-- covered by the em module in CORSIKA. -->
                         For this purpose, based on the particle condition
                         $q_i$ the maximum energy at which a decay $E_\mathrm{d}$,
                         the next stochastic interaction $E_\mathrm{i}$,
@@ -585,7 +587,7 @@
                                 To calculate the distance from the energy
                                 $E_\mathrm{f}$ of the next stochastic loss,
                                 the upper limit of the track integral see
-                                equation \ref{eq:track_integral} must be determined.
+                                equation \eqref{eq:track_integral} must be determined.
                                 </p>
                             </li>
                             <li>
@@ -681,7 +683,7 @@
                         </p>
 
                         <hr>
-                        <h3>Study of secondaries products</h3>
+                        <h3>Study of secondary products</h3>
 
                         <p>
                         For each bincenter, $10^5$ stochastic losses are
@@ -692,13 +694,13 @@
 
                         <div class="grid">
                             <div class="column">
-                                <h4><i> Gamma produced secondaries:</i></h4>
+                                <h4><i> Secondaries produced by $\gamma$</i></h4>
                                 <div class="aligncenter size-85">
                                     <img src="./images/secondaries_gamma.png" alt="">
                                 </div>
                             </div>
                             <div class="column">
-                                <h4><i>Electron produced secondaries</i></h4>
+                                <h4><i>Secondaries produced by $e^-$</i></h4>
                                 <div class="aligncenter size-85">
                                     <img src="./images/secondaries_electron.png" alt="">
                                 </div>
@@ -708,6 +710,7 @@
                         <p>
                         For particle energies below $10^5$ for electrons and for
                         $10^2\,\mathrm{MeV}$ for photons exists a charge excess between the deposited energy in electrons and positrons.
+                        This is interesting for radio observations in dense media.
                         The secondary products for the photonuclear interactions cannot be taken into account at present, but they are only a subdominant component for electrons.
                         </p>
                     </div>
@@ -800,7 +803,6 @@
 
                     <div class="wrap size-60">
                         <p>
-                        Five different initial electron energies were determined.
                         For an energy cut of 10 MeV the deflection angles were
                         determined in relation to the continuous losses.
                         </p>
@@ -814,7 +816,7 @@
                         <h3>Stochastic deflection</h3>
 
                         <p class="text-intro">
-                        Occurs a large losses there is a realistic chance
+                        If a large losses occurs, there is a realistic chance
                         that the primary particle is deflected due to the interaction.
                         For this purpose, the infrastructure was created to
                         realize stochastic deflections in this work and
@@ -827,7 +829,7 @@
                         $1\,\mathrm{GeV}$ are produced.
                         The deflections were simulated and the losses are
                         projected onto an observation plane on the earth's surface.
-                        For particles close to the shower cores,
+                        For particles close to the shower core,
                         the stochastic deflection provides a significant
                         contribution to the Coulomb scattering processes.
                         </p>
@@ -849,7 +851,7 @@
                         </p>
 
                         <p>
-                        Shown are the emition angular of the electron sampled
+                        Shown are the emission angular of the electron sampled
                         from a pair production of a photon.
                         Compared are the sampled angular from the Tsai-parametrization
                         and the approximation $\Phi = m_\mathrm{e} / E_\gamma$
@@ -859,7 +861,7 @@
                         <img class="aligncenter size-70" src="images/asymmetry.png" alt="">
 
                         <p>
-                        Even if they do not match for low energy,
+                        Even if they do not match for low energies,
                         there are processes for low energetic electrons which
                         influence the directional deflections more significantly,
                         such as multiple scattering or magnetic field deflections.
@@ -874,7 +876,7 @@
                         <p class="text-intro">
                         The first attempts to create an electromagnetic shower all failed.
                         This is due to a discontinuity in the interpolated functions
-                        which produce strong oscillations.
+                        which produced strong oscillations.
                         These have so far been a subdominant effect,
                         since the choice of the stochastic energy cut changes
                         the relative relationship of the continuous losses of the
@@ -883,7 +885,7 @@
 
                         <p>
                         Shown are the relative deviations of the old
-                        interpolation method in solid lines and the new dashed
+                        interpolation method in solid lines and the new in dashed
                         lines to the integrated values.
                         In the case that an energy cut is chosen, where the
                         oscillations make a significant contribution in solving
@@ -908,10 +910,10 @@
                         </p>
 
                         <p>
-                        By approximating the lower interpolation limit avoids
+                        Approximating the lower interpolation limit avoids
                         non-physical oscillations where no rate exists, by the
                         cost of a small energy uncertainty of the lower
-                        intervall region.
+                        interval region.
                         </p>
 
                         <img class="aligncenter size-70" src="images/restricted_energy_range.png" alt="">
@@ -949,8 +951,9 @@
                         This has a direct influence on the step size and the number of secondary particles produced.
                         </p>
 
-                        <h3>Averaged runtime for $100\,\mathrm{GeV}$ electron induced
-                            cascades for different stochastic with same particle threshold from $20\,\mathrm{MeV}$</h3>
+                        <h3>Averaged runtime for $100\,\mathrm{GeV}\,\, e^-$ induced
+                            cascades for different stochastic energy thresholds
+                            with same particle threshold of $20\,\mathrm{MeV}$</h3>
                         <p>
                         Listed are the runtimes to simulate a shower with
                         different stochastic energy cuts.
@@ -1006,8 +1009,7 @@
 
                         <p class="text-intro">
                         For study purposes, $50$ inital $10\,\mathrm{TeV}$ electron showers were simulated.
-                        The $68\,\%$-quantiles are plotted as the error bar and not the
-                        error on the mean value.
+                        The $68\,\%$-quantiles are plotted as the error bar.
                         The lateral profiles can be used to check whether the production mechanisms
                         and the continuous losses of the particles look reasonable.
                         </p>
@@ -1089,11 +1091,11 @@
                                 <h3>Landau–Pomeranchuk–Migdal effect</h3>
                                 <img class="aligncenter size-70" src="images/lpmeffect.png" alt="">
 
-                                <h3>Photonuclear and mu pair-production</h3>
+                                <h3>Photonuclear interactions and muon pairproduction</h3>
 
                                 <h3>Em module for hadronic particles</h3>
 
-                                <h3>Interpolation</h3>
+                                <h3>Interpolation improvements</h3>
 
                                 <h3>Backward Monte Carlo</h3>
                             </div>
@@ -1117,13 +1119,13 @@
                                         parameterisations
                                     </li>
                                     <li>
-                                        care about installtion process
+                                        care about installation process
                                     </li>
                                     <li>
-                                        implement an em-modell in CORSIKA
+                                        implement an em-model in CORSIKA
                                     </li>
                                     <li>
-                                        create new interpoaltion methods in PROPOSAL
+                                        create new interpolation methods in PROPOSAL
                                     </li>
                                     <li>
                                         observe first em shower quantities
