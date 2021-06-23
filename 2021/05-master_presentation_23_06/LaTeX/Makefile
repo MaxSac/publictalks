@@ -25,6 +25,9 @@ $(OBJDIR)/Syncrotron.png: | $(OBJDIR)
 $(OBJDIR)/Orion.jpg: | $(OBJDIR)
 	curl -s -o $@ https://www.nasa.gov/sites/default/files/thumbnails/image/orion-nebula-xlarge_web.jpg
 
+$(OBJDIR)/auger_prime.jpg: | $(OBJDIR)
+	curl -s -o $@ https://www.auger.org/images/News/2018-09_NWO-grant_radio1.jpg
+
 $(OBJDIR)/Blackhole.jpg: | $(OBJDIR)
 	curl -s -o $@ https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Black_hole_-_Messier_87_crop_max_res.jpg/480px-Black_hole_-_Messier_87_crop_max_res.jpg
 
@@ -46,7 +49,7 @@ $(OBJDIR)/Dom.jpg: | $(OBJDIR)
 $(OBJDIR)/overview.pdf: overview.tex $(addprefix $(OBJDIR)/,Crab.jpg FermiLAT.jpg IceCube.jpg)
 	$(TEX_CMD) $<
 
-$(OBJDIR)/measureing_process.pdf: measureing_process.tex $(addprefix $(OBJDIR)/,M87.jpg Syncrotron.png Orion.jpg Blackhole.jpg Atmosphere.jpg Fermi.jpg Hawc.jpg Cta.jpg Dom.jpg)
+$(OBJDIR)/measureing_process.pdf: measureing_process.tex $(addprefix $(OBJDIR)/,M87.jpg Syncrotron.png Orion.jpg Blackhole.jpg Atmosphere.jpg Fermi.jpg Hawc.jpg Cta.jpg auger_prime.jpg)
 	$(TEX_CMD) $<
 
 $(OBJDIR)/shower.pdf: shower.tex
