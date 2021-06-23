@@ -75,7 +75,7 @@
                                 <li>
                                     <a href="#" target="_blank">
                                         <span class="chapter">Problem of first
-                                            electro magnetic showers and need of new interpolation routine</span>
+                                            electromagnetic showers and need of new interpolation routine</span>
                                         <span class="toc-page">19</span>
                                     </a>
                                 </li>
@@ -267,7 +267,8 @@
                             <li>
                                 <h4>Initial idea (2004)</h4>
                                 <p class="text-quote">
-                                An accurate simulation of the propagation of muons through large amounts of matter is needed for the analysis of data produced by muon/neutrino underground experiments.</p>
+                                An accurate simulation of the propagation of
+                                muons through large volumes of matter is needed for the analysis of data produced by muon/neutrino underground experiments.</p>
                                 <!-- <cite> -->
                                 <!--     <a href="https://arxiv.org/abs/hep-ph/0407075v3" target="_blank">@D.Chirkin</a> -->
                                 <!-- </cite> -->
@@ -312,8 +313,8 @@
                                     em cascade simulation (2021)</h4>
                                 <p>
                                 Modularisation of the calculations,
-                                so that can be utilized by external libraries.
-                                Use of the library to calculate the electromagnetic interactions
+                                so that it can be utilized by external libraries.
+                                Use PROPOSAL to calculate the electromagnetic interactions
                                 and losses in the CORSIKA8 simulation.
                                 </p>
                                 <!-- <cite> -->
@@ -531,7 +532,7 @@
                         After that it is possible to calculate the decay spectrum
                         of the lepton if it is of interest.
                         Based on the state before $q_i$ and after the continuous loss
-                        $q_\mathrm{CL}$ the effect of inelastic Coulomb scattering
+                        $q_\mathrm{CL}$ the effect of elastic Coulomb scattering
                         processes can be taken into account as a correction.
                         </p>
 
@@ -729,7 +730,7 @@
                             <li>
                                 <h2>Multiple scattering</h2>
                                 <p>
-                                Deflection caused by inelastic Coulomb
+                                Deflection caused by elastic Coulomb
                                 interactions traveling a certain distance.
                                 </p>
                             </li>
@@ -758,7 +759,7 @@
 
                         <p class="text-intro">
                         A charged particle passing a distance $x$ undergoes an
-                        ensemble of inelastic Coulomb scattering.
+                        ensemble of elastic Coulomb scattering.
                         The charged particle is deflected from its original
                         trajectory and has a different final direction after the
                         continuous step.
@@ -851,7 +852,7 @@
                         Shown are the emition angular of the electron sampled
                         from a pair production of a photon.
                         Compared are the sampled angular from the Tsai-parametrization
-                        and the approximation $\theta = m_\mathrm{e} / E_\gamma$
+                        and the approximation $\Phi = m_\mathrm{e} / E_\gamma$
                         mentioned in the EGS manual.
                         </p>
 
@@ -1065,25 +1066,32 @@
 
 
                         <h3>Radio signal</h3>
+                        The event was kindly produced by N. Karasthathis.
+
                         <img class="aligncenter size-70"
                              src="images/radiodata_100.png" alt="">
 
                         <h3>Cherenkov cone</h3>
+                        The event was kindly produced by D. Baack.
                         <img class="aligncenter size-70"
                              src="images/cherenkov.png" alt=""/>
                     </div>
                 </section>
 
                 <section>
+                    <span class="background-right-bottom"
+                                 style="background-image:url('images/proceeding.png')"></span>
                     <div class="grid">
                         <div class="column">
                             <div class="wrap size-75">
                                 <h2> <strong> Outlook </strong> </h2>
 
                                 <h3>Landau–Pomeranchuk–Migdal effect</h3>
-                                <img class="aligncenter size-90" src="images/lpmeffect.png" alt="">
+                                <img class="aligncenter size-70" src="images/lpmeffect.png" alt="">
 
                                 <h3>Photonuclear and mu pair-production</h3>
+
+                                <h3>Em module for hadronic particles</h3>
 
                                 <h3>Interpolation</h3>
 
@@ -1098,28 +1106,27 @@
                                     <li>
                                         restrucure the cross section generation and evaluation
                                     </li>
-                                    <li> 
+                                    <li>
                                         create modules which solve em subtasks for
-                                        CORSIKA8 as well as IceCube 
+                                        CORSIKA8                                   </li>
+                                    <li>
+                                        secondaries calculator
                                     </li>
-                                    <li> 
-                                        secondaries calculator 
-                                    </li>
-                                    <li> 
+                                    <li>
                                         ability to add stochastic deflections
                                         parameterisations
                                     </li>
-                                    <li> 
-                                        care about installtion process 
+                                    <li>
+                                        care about installtion process
                                     </li>
-                                    <li> 
-                                        implement an em-modell in CORSIKA 
+                                    <li>
+                                        implement an em-modell in CORSIKA
                                     </li>
-                                    <li> 
-                                        create new interpoaltion methods in PROPOSAL 
+                                    <li>
+                                        create new interpoaltion methods in PROPOSAL
                                     </li>
-                                    <li> 
-                                        evaluate first em shower quantities 
+                                    <li>
+                                        observe first em shower quantities
                                     </li>
                                 </div>
                             </div>

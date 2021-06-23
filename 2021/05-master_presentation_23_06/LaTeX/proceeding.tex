@@ -1,0 +1,16 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{mathtools}
+
+\usetikzlibrary{shadings,shadows,shapes.arrows}
+
+\begin{document}
+\begin{tikzpicture}[scale=1, transform shape]
+    \draw [opacity=0.3, path picture={\node (source) at (path picture bounding box.center)
+        {\includegraphics[height=4cm]{./proceeding_first_page.pdf}};} ] (0,0)
+        rectangle (2.7,4);
+
+\end{tikzpicture}
+\end{document}
